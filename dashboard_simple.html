@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<!-- 
+  EXPLANATION: This tells the browser this is an HTML5 document.
+  HTML = HyperText Markup Language (the structure of web pages)
+-->
+
+<html lang="en">
+<!-- 
+  <html> tag wraps everything
+  lang="en" tells browser the language is English
+-->
+
+<head>
+  <!-- 
+    HEAD SECTION: Contains information ABOUT the page (not visible to user)
+    Like metadata, title, styles, scripts
+  -->
+  
+  <meta charset="UTF-8">
+  <!-- Tells browser to use UTF-8 character encoding (supports all languages) -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Makes the page mobile-friendly (responsive design) -->
+  
+  <title>Stock Dashboard - Simple View</title>
+  <!-- Text shown in browser tab -->
+  
+  <style>
+    /* 
+      CSS = Cascading Style Sheets (makes things look pretty)
+      Written inside <style> tags in the <head>
+      
+      CSS SYNTAX:
+      selector {
+        property: value;
+      }
+      
+      selector = what to style (body, div, .class, #id)
+      property = what to change (color, size, etc)
+      value = how to change it (red, 20px, etc)
+    */
+    
+    /* GLOBAL STYLES - Apply to entire page */
+    * {
+      /* * means "select everything" */
+      margin: 0;           /* Remove default spacing outside elements */
+      padding: 0;          /* Remove default spacing inside elements */
+      box-sizing: border-box;  /* Make sizing easier to calculate */
+    }
+    
+    body {
+      /* body = entire visible page */
+      font-family: Arial, sans-serif;  /* Font for all text */
+      background-color: #f5f5f5;       /* Light gray background */
+      color: #333;                     /* Dark gray text */
+      padding: 20px;                   /* Space around content */
+    }
+    
+    /* CONTAINER - Main wrapper for content */
+    .container {
+      /* .container = class selector (can be used multiple times) */
+      max-width: 1200px;        /* Maximum width = 1200 pixels */
+      margin: 0 auto;           /* Center the container */
+      background: white;        /* White background */
+      border-radius: 10px;      /* Rounded corners */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);  /* Subtle shadow */
+      padding: 20px;            /* Space inside container */
+    }
+    
+    /* HEADER STYLES */
+    .header {
+      text-align: center;       /* Center the text */
+      padding: 20px 0;          /* Vertical spacing */
+      border-bottom: 3px solid #4CAF50;  /* Green line at bottom */
+      margin-bottom: 30px;      /* Space below header */
+    }
+    
+    .header h1 {
+      /* h1 inside .header class */
+      color: #2c3e50;           /* Dark blue-gray */
+      font-size: 32px;          /* Large text */
+      margin-bottom: 10px;      /* Space below heading */
+    }
+    
+    .date-info {
+      color: #7f8c8d;           /* Medium gray */
+      font-size: 16px;          /* Normal size */
+    }
+    
+    /* MARKET MOOD - Big indicator at top */
+    .market-mood {
+      text-align: center;       /* Center everything */
+      padding: 30px;            /* Lots of space inside */
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  
+      /* Gradient = smooth color transition from purple to violet */
+      border-radius: 15px;      /* Very rounded corners */
+      margin-bottom: 30px;      /* Space below */
+      color: white;             /* White text */
+    }
+    
+    .mood-emoji {
+      font-size: 60px;          /* HUGE emoji */
+      margin-bottom: 10px;      /* Space below emoji */
+    }
+    
+    .mood-text {
+      font-size: 28px;          /* Large text */
+      font-weight: bold;        /* Make it thick */
+      text-transform: uppercase; /* ALL CAPS */
+    }
+    
+    /* GRID SYSTEM - Makes boxes sit side by side */
+    .grid {
+      display: grid;            /* Use CSS Grid layout */
+      grid-template-columns: 1fr 1fr;  /* Two equal columns (1 fraction each) */
+      gap: 20px;                /* Space between boxes */
+      margin-bottom: 30px;      /* Space below grid */
+    }
+    
+    /* CARD - Individual boxes */
+    .card {
+      background: white;        /* White background */
+      border: 2px solid #e0e0e0;  /* Light gray border */
+      border-radius: 10px;      /* Rounded corners */
+      padding: 20px;            /* Space inside */
+      transition: transform 0.3s;  /* Smooth animation on hover */
+    }
+    
+    .card:hover {
+      /* When mouse hovers over card */
+      transform: translateY(-5px);  /* Move up 5 pixels */
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);  /* Stronger shadow */
+    }
+    
+    .card-title {
+      font-size: 18px;          /* Medium-large text */
+      color: #2c3e50;           /* Dark color */
+      font-weight: bold;        /* Thick text */
+      margin-bottom: 15px;      /* Space below */
+      border-bottom: 2px solid #3498db;  /* Blue underline */
+      padding-bottom: 10px;     /* Space before underline */
+    }
+    
+    /* PORTFOLIO VALUE - Big number display */
+    .portfolio-value {
+      text-align: center;       /* Center everything */
+      padding: 20px;            /* Space inside */
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);  
+      /* Pink to red gradient */
+      border-radius: 10px;      /* Rounded corners */
+      color: white;             /* White text */
+      margin-bottom: 30px;      /* Space below */
+    }
+    
+    .value-label {
+      font-size: 16px;          /* Normal size */
+      opacity: 0.9;             /* Slightly transparent */
+    }
+    
+    .value-amount {
+      font-size: 42px;          /* HUGE number */
+      font-weight: bold;        /* Very thick */
+      margin: 10px 0;           /* Vertical spacing */
+    }
+    
+    .value-change {
+      font-size: 20px;          /* Large text */
+    }
+    
+    /* STOCK LIST - Rows of stocks */
+    .stock-list {
+      list-style: none;         /* Remove bullet points */
+    }
+    
+    .stock-item {
+      display: flex;            /* Flexbox = items in a row */
+      justify-content: space-between;  /* Space items apart */
+      align-items: center;      /* Vertical alignment */
+      padding: 15px;            /* Space inside */
+      margin-bottom: 10px;      /* Space between items */
+      border-radius: 8px;       /* Rounded corners */
+      background: #f8f9fa;      /* Very light gray */
+      transition: background 0.3s;  /* Smooth color change */
+    }
+    
+    .stock-item:hover {
+      background: #e9ecef;      /* Darker gray on hover */
+    }
+    
+    .stock-name {
+      font-weight: bold;        /* Thick text */
+      font-size: 16px;          /* Medium size */
+      color: #2c3e50;           /* Dark color */
+    }
+    
+    .stock-change {
+      font-size: 18px;          /* Medium-large */
+      font-weight: bold;        /* Thick */
+      padding: 5px 15px;        /* Space inside */
+      border-radius: 20px;      /* Very rounded (pill shape) */
+    }
+    
+    /* POSITIVE CHANGE - Green */
+    .positive {
+      color: #27ae60;           /* Green text */
+      background: #d5f4e6;      /* Light green background */
+    }
+    
+    /* NEGATIVE CHANGE - Red */
+    .negative {
+      color: #e74c3c;           /* Red text */
+      background: #fadbd8;      /* Light red background */
+    }
+    
+    /* ADVICE SECTION */
+    .advice-box {
+      background: #fff3cd;      /* Light yellow (like sticky note) */
+      border-left: 4px solid #ffc107;  /* Thick yellow left border */
+      padding: 20px;            /* Space inside */
+      border-radius: 5px;       /* Slightly rounded */
+      margin-top: 20px;         /* Space above */
+    }
+    
+    .advice-box h3 {
+      color: #856404;           /* Dark yellow/brown */
+      margin-bottom: 15px;      /* Space below heading */
+    }
+    
+    .advice-list {
+      list-style: none;         /* No bullets */
+    }
+    
+    .advice-list li {
+      padding: 8px 0;           /* Vertical spacing */
+      color: #856404;           /* Dark yellow/brown */
+    }
+    
+    .advice-list li:before {
+      /* Add custom bullet */
+      content: "💡 ";           /* Light bulb emoji */
+      margin-right: 10px;       /* Space after emoji */
+    }
+    
+    /* RESPONSIVE DESIGN - For mobile phones */
+    @media (max-width: 768px) {
+      /* When screen is smaller than 768px (mobile) */
+      
+      .grid {
+        grid-template-columns: 1fr;  /* Stack columns vertically */
+      }
+      
+      .header h1 {
+        font-size: 24px;        /* Smaller heading */
+      }
+      
+      .value-amount {
+        font-size: 32px;        /* Smaller value */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+    BODY SECTION: Everything visible on the page goes here
+    
+    HTML ELEMENTS:
+    <div> = division/container (generic box)
+    <h1>, <h2>, <h3> = headings (h1 is biggest)
+    <p> = paragraph
+    <ul> = unordered list (bullets)
+    <li> = list item
+    <span> = inline container (for styling part of text)
+    
+    CLASSES: class="name" - for styling multiple elements
+    IDs: id="name" - for unique elements (only one per page)
+  -->
+  
+  <div class="container">
+    <!-- Main wrapper for all content -->
+    
+    <!-- HEADER -->
+    <div class="header">
+      <h1>📊 Stock Market Dashboard</h1>
+      <div class="date-info">
+        📅 <span id="current-date">28 January 2026</span> | 
+        🕐 Last Updated: <span id="update-time">3:30 PM</span>
+      </div>
+    </div>
+    
+    <!-- MARKET MOOD -->
+    <div class="market-mood">
+      <div class="mood-emoji">😊</div>
+      <div class="mood-text">Market is Positive</div>
+      <div style="margin-top: 15px; font-size: 18px;">
+        Overall Change: <strong>+1.2%</strong>
+      </div>
+    </div>
+    
+    <!-- PORTFOLIO VALUE -->
+    <div class="portfolio-value">
+      <div class="value-label">💰 Total Portfolio Value</div>
+      <div class="value-amount">₹15,00,000</div>
+      <div class="value-change">
+        Today's Change: <strong>+₹18,000 (+1.2%)</strong>
+      </div>
+    </div>
+    
+    <!-- GRID OF CARDS -->
+    <div class="grid">
+      
+      <!-- TOP GAINERS CARD -->
+      <div class="card">
+        <div class="card-title">🏆 Today's Winners</div>
+        <ul class="stock-list">
+          <li class="stock-item">
+            <span class="stock-name">RELIANCE</span>
+            <span class="stock-change positive">+2.5% ▲</span>
+          </li>
+          <li class="stock-item">
+            <span class="stock-name">HDFCBANK</span>
+            <span class="stock-change positive">+1.8% ▲</span>
+          </li>
+          <li class="stock-item">
+            <span class="stock-name">TCS</span>
+            <span class="stock-change positive">+1.5% ▲</span>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- TOP LOSERS CARD -->
+      <div class="card">
+        <div class="card-title">⚠️ Today's Losers</div>
+        <ul class="stock-list">
+          <li class="stock-item">
+            <span class="stock-name">ITC</span>
+            <span class="stock-change negative">-1.1% ▼</span>
+          </li>
+          <li class="stock-item">
+            <span class="stock-name">INFY</span>
+            <span class="stock-change negative">-0.5% ▼</span>
+          </li>
+          <li class="stock-item">
+            <span class="stock-name">WIPRO</span>
+            <span class="stock-change negative">-0.3% ▼</span>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    <!-- ADVICE BOX -->
+    <div class="advice-box">
+      <h3>💡 Simple Advice for Today</h3>
+      <ul class="advice-list">
+        <li>Good day for Banking stocks - Consider holding or buying more</li>
+        <li>Energy sector showing strength - RELIANCE performing well</li>
+        <li>IT stocks are weak today - Wait for better entry price</li>
+        <li>Overall market is positive - Good day to stay invested</li>
+      </ul>
+    </div>
+    
+  </div>
+  
+  <script>
+    /* 
+      JAVASCRIPT: Makes the page interactive and dynamic
+      Runs in the browser after page loads
+      
+      This script updates the date/time automatically
+    */
+    
+    // Get current date
+    const now = new Date();
+    
+    // Format date as "28 January 2026"
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    const dateString = now.toLocaleDateString('en-IN', options);
+    
+    // Update the date in the page
+    document.getElementById('current-date').textContent = dateString;
+    
+    // Format time as "3:30 PM"
+    const timeString = now.toLocaleTimeString('en-IN', { 
+      hour: 'numeric', 
+      minute: '2-digit',
+      hour12: true 
+    });
+    
+    // Update the time in the page
+    document.getElementById('update-time').textContent = timeString;
+  </script>
+  
+</body>
+</html>
