@@ -1,17 +1,16 @@
 """
-STOCK ANALYSIS ENGINE
-Reads your Excel data and generates insights for the dashboard
+ENHANCED STOCK ANALYSIS ENGINE
+Now includes High/Low prices with times for each stock
 
 This script:
 1. Reads Stock_Tracker_Fixed.xlsx
 2. Calculates performance metrics
-3. Identifies patterns
+3. Finds HIGH and LOW prices with times
 4. Generates insights
 5. Updates dashboard with real data
 """
 
 import pandas as pd
-import openpyxl
 from datetime import datetime
 import json
 
@@ -28,12 +27,9 @@ def load_stock_data():
     print("📂 Loading Excel data...")
     
     try:
-        # Read Excel file
         df = pd.read_excel(EXCEL_FILE)
-        
         print(f"✓ Loaded {len(df)} rows of data")
-        print(f"✓ Columns: {', '.join(df.columns[:10])}...")  # Show first 10 columns
-        
+        print(f"✓ Columns: {', '.join(df.columns[:10])}...")
         return df
     
     except FileNotFoundError:
@@ -48,13 +44,14 @@ def load_stock_data():
 def analyze_latest_day(df):
     """
     Analyze the most recent trading day
+    NOW INCLUDES: High/Low prices with times
     Returns: dict with analysis results
     """
-    print("\n📊 Analyzing latest trading day...")
+    print("\n📊 Analyzing latest trading day with High/Low...")
     
     # Get unique dates
     dates = df['Date'].unique()
-    latest_date = sorted(dates)[-1]  # Most recent date
+    latest_date = sorted(dates)[-1]
     
     print(f"   Latest date: {latest_date}")
     
@@ -69,21 +66,41 @@ def analyze_latest_day(df):
         'total_stocks': len(stock_columns),
         'gainers': [],
         'losers': [],
-        'sector_performance': {},
-        'best_time': None,
         'insights': []
     }
     
     # Analyze each stock
     for stock in stock_columns:
-        # Get opening and closing prices
-        stock_data = latest_data[stock].dropna()
+        # Get stock data WITH TIME column
+        stock_data_with_time = latest_data[['Time', stock]].dropna()
         
-        if len(stock_data) < 2:
+        if len(stock_data_with_time) < 2:
             continue
         
-        open_price = stock_data.iloc[0]
-        close_price = stock_data.iloc[-1]
+        # Basic prices
+        open_price = stock_data_with_time[stock].iloc[0]
+        close_price = stock_data_with_time[stock].iloc[-1]
+        
+        # NEW: Find HIGH and its time
+        high_idx = stock_data_with_time[stock].idxmax()
+        high_price = stock_data_with_time.loc[high_idx, stock]
+        high_time = stock_data_with_time.loc[high_idx, 'Time']
+        
+        # NEW: Find LOW and its time
+        low_idx = stock_data_with_time[stock].idxmin()
+        low_price = stock_data_with_time.loc[low_idx, stock]
+        low_time = stock_data_with_time.loc[low_idx, 'Time']
+        
+        # Format times (convert to string if needed)
+        if isinstance(high_time, str):
+            high_time_str = high_time
+        else:
+            high_time_str = high_time.strftime('%I:%M %p') if hasattr(high_time, 'strftime') else str(high_time)
+        
+        if isinstance(low_time, str):
+            low_time_str = low_time
+        else:
+            low_time_str = low_time.strftime('%I:%M %p') if hasattr(low_time, 'strftime') else str(low_time)
         
         # Calculate change
         change = close_price - open_price
@@ -94,7 +111,12 @@ def analyze_latest_day(df):
             'open': round(float(open_price), 2),
             'close': round(float(close_price), 2),
             'change': round(float(change), 2),
-            'change_pct': round(float(change_pct), 2)
+            'change_pct': round(float(change_pct), 2),
+            # NEW: High/Low data
+            'high': round(float(high_price), 2),
+            'high_time': high_time_str,
+            'low': round(float(low_price), 2),
+            'low_time': low_time_str
         }
         
         # Categorize as gainer or loser
@@ -116,7 +138,6 @@ def calculate_portfolio_value(analysis):
     """
     Calculate total portfolio metrics
     """
-    # Example: Assume 100 shares of each stock
     shares_per_stock = 100
     
     total_value = 0
@@ -164,15 +185,21 @@ def generate_insights(analysis):
         mood_emoji = "😐"
         insights.append("Market is mixed today - Wait for clear signals")
     
-    # Top performer insight
+    # Top performer insight with high/low
     if analysis['gainers']:
         top_gainer = analysis['gainers'][0]
-        insights.append(f"{top_gainer['name']} is the top performer (+{top_gainer['change_pct']}%)")
+        insights.append(
+            f"{top_gainer['name']} is top performer (+{top_gainer['change_pct']}%) - "
+            f"Hit ₹{top_gainer['high']} at {top_gainer['high_time']}"
+        )
     
-    # Biggest loser insight
+    # Biggest loser insight with high/low
     if analysis['losers']:
         top_loser = analysis['losers'][0]
-        insights.append(f"Avoid {top_loser['name']} today (down {top_loser['change_pct']}%)")
+        insights.append(
+            f"Avoid {top_loser['name']} today ({top_loser['change_pct']}%) - "
+            f"Dropped to ₹{top_loser['low']} at {top_loser['low_time']}"
+        )
     
     return {
         'mood': mood,
@@ -218,9 +245,10 @@ def save_to_json(analysis):
 def print_summary(output):
     """
     Print a nice summary to terminal
+    NOW INCLUDES: High/Low with times
     """
     print("\n" + "=" * 70)
-    print("📊 ANALYSIS SUMMARY")
+    print("📊 ANALYSIS SUMMARY WITH HIGH/LOW")
     print("=" * 70)
     
     print(f"\n📅 Date: {output['date']}")
@@ -234,11 +262,15 @@ def print_summary(output):
     
     print(f"\n🏆 Top Gainers:")
     for stock in output['gainers']:
-        print(f"   {stock['name']}: ₹{stock['close']} (+{stock['change_pct']}%)")
+        print(f"\n   {stock['name']}: ₹{stock['close']} (+{stock['change_pct']}%)")
+        print(f"      📈 High: ₹{stock['high']} at {stock['high_time']}")
+        print(f"      📉 Low:  ₹{stock['low']} at {stock['low_time']}")
     
     print(f"\n⚠️  Top Losers:")
     for stock in output['losers']:
-        print(f"   {stock['name']}: ₹{stock['close']} ({stock['change_pct']}%)")
+        print(f"\n   {stock['name']}: ₹{stock['close']} ({stock['change_pct']}%)")
+        print(f"      📈 High: ₹{stock['high']} at {stock['high_time']}")
+        print(f"      📉 Low:  ₹{stock['low']} at {stock['low_time']}")
     
     print(f"\n💡 Insights:")
     for insight in output['insights']:
@@ -252,7 +284,7 @@ def main():
     Main analysis pipeline
     """
     print("=" * 70)
-    print("🚀 STOCK ANALYSIS ENGINE")
+    print("🚀 ENHANCED STOCK ANALYSIS ENGINE")
     print("=" * 70)
     
     # Step 1: Load data
@@ -260,7 +292,7 @@ def main():
     if df is None:
         return
     
-    # Step 2: Analyze
+    # Step 2: Analyze with High/Low
     analysis = analyze_latest_day(df)
     
     # Step 3: Save results
@@ -271,7 +303,7 @@ def main():
     
     print("\n✓ Analysis complete!")
     print(f"✓ Data saved to {OUTPUT_FILE}")
-    print("\n💡 Next: Open dashboard_simple.html in your browser")
+    print("\n💡 Next: Open dashboard-complete.html in your browser")
 
 
 if __name__ == "__main__":
