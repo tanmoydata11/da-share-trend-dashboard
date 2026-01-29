@@ -7,10 +7,6 @@
   <title>All Stocks - High/Low Data</title>
 
   <style>
-    /* ========================================
-       ALL STOCKS PAGE - COMPLETE CSS
-       ======================================== */
-
     * {
       margin: 0;
       padding: 0;
@@ -23,7 +19,6 @@
       color: #333;
       padding: 20px;
       padding-top: 80px;
-      /* Space for fixed back button */
     }
 
     .container {
@@ -35,7 +30,6 @@
       padding: 20px;
     }
 
-    /* FLOATING BACK BUTTON */
     .back-button {
       position: fixed;
       top: 20px;
@@ -60,11 +54,6 @@
       box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
     }
 
-    .back-button:active {
-      transform: scale(0.98);
-    }
-
-    /* HEADER */
     .header {
       text-align: center;
       padding: 20px 0;
@@ -89,7 +78,6 @@
       margin-top: 10px;
     }
 
-    /* STATS SUMMARY */
     .stats-summary {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -116,7 +104,6 @@
       font-weight: bold;
     }
 
-    /* STOCKS GRID */
     .stocks-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -124,7 +111,6 @@
       margin-bottom: 30px;
     }
 
-    /* STOCK CARD */
     .stock-card {
       background: white;
       border: 2px solid #e0e0e0;
@@ -147,7 +133,6 @@
       border-left: 5px solid #e74c3c;
     }
 
-    /* STOCK HEADER */
     .stock-header {
       display: flex;
       justify-content: space-between;
@@ -180,7 +165,6 @@
       background: #fadbd8;
     }
 
-    /* PRICE INFO */
     .price-info {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -207,7 +191,6 @@
       color: #2c3e50;
     }
 
-    /* HIGH/LOW DETAILS */
     .highlow-details {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -259,7 +242,6 @@
       gap: 4px;
     }
 
-    /* RANGE BAR */
     .range-bar {
       margin-top: 15px;
       padding-top: 15px;
@@ -298,7 +280,6 @@
       margin-top: 5px;
     }
 
-    /* FOOTER */
     .footer {
       text-align: center;
       padding: 20px;
@@ -307,7 +288,12 @@
       margin-top: 30px;
     }
 
-    /* RESPONSIVE */
+    .loading {
+      text-align: center;
+      padding: 50px;
+      font-size: 18px;
+    }
+
     @media (max-width: 768px) {
       body {
         padding: 10px;
@@ -333,1130 +319,151 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
-
-    /* LOADING ANIMATION */
-    .loading {
-      text-align: center;
-      padding: 50px;
-      font-size: 18px;
-      color: #7f8c8d;
-    }
-
-    .loading:after {
-      content: '...';
-      animation: dots 1.5s steps(4, end) infinite;
-    }
-
-    @keyframes dots {
-
-      0%,
-      20% {
-        content: '.';
-      }
-
-      40% {
-        content: '..';
-      }
-
-      60%,
-      100% {
-        content: '...';
-      }
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- FLOATING BACK BUTTON -->
   <a href="index.html" class="back-button">
     ← Back to Dashboard
   </a>
 
   <div class="container">
+    <div id="loading" class="loading">Loading all stocks data...</div>
+    <div id="all-stocks" style="display:none;">
 
-    <!-- HEADER -->
-    <div class="header">
-      <h1>📊 All Stocks - High/Low Analysis</h1>
-      <div class="date-info">
-        📅 <span id="current-date">28 January 2026</span> |
-        🕐 Last Updated: <span id="update-time">3:30 PM</span>
-      </div>
-      <div class="subtitle">Complete intraday price movements with high/low timings</div>
-    </div>
-
-    <!-- STATS SUMMARY -->
-    <div class="stats-summary">
-      <div class="stat-box">
-        <div class="stat-label">📈 Total Gainers</div>
-        <div class="stat-value">12</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-label">📉 Total Losers</div>
-        <div class="stat-value">8</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-label">💰 Avg. Volatility</div>
-        <div class="stat-value">3.2%</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-label">🎯 Stocks Tracked</div>
-        <div class="stat-value">20</div>
-      </div>
-    </div>
-
-    <!-- ALL STOCKS GRID -->
-    <div class="stocks-grid">
-
-      <!-- STOCK 1 - RELIANCE -->
-      <div class="stock-card gainer">
-        <div class="stock-header">
-          <span class="stock-name">RELIANCE</span>
-          <span class="stock-change positive">+2.5% ▲</span>
+      <div class="header">
+        <h1>📊 All Stocks - High/Low Analysis</h1>
+        <div class="date-info">
+          📅 <span id="current-date"></span> |
+          🕐 Last Updated: <span id="update-time"></span>
         </div>
+        <div class="subtitle">Complete intraday price movements with high/low timings</div>
+      </div>
 
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹2,413</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹2,472</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹3.50</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹8.00</div>
-          </div>
+      <div class="stats-summary">
+        <div class="stat-box">
+          <div class="stat-label">📈 Total Gainers</div>
+          <div class="stat-value" id="gainers-count"></div>
         </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹2,475.50</div>
-            <div class="detail-time">🕐 at 2:15 PM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹2,405.00</div>
-            <div class="detail-time">🕐 at 9:30 AM</div>
-          </div>
+        <div class="stat-box">
+          <div class="stat-label">📉 Total Losers</div>
+          <div class="stat-value" id="losers-count"></div>
         </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 90%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹2,405</span>
-            <span>High: ₹2,475.50</span>
-          </div>
+        <div class="stat-box">
+          <div class="stat-label">💰 Avg. Volatility</div>
+          <div class="stat-value" id="avg-volatility"></div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">🎯 Stocks Tracked</div>
+          <div class="stat-value" id="total-stocks"></div>
         </div>
       </div>
 
-      <!-- STOCK 2 - HDFCBANK -->
-      <div class="stock-card gainer">
-        <div class="stock-header">
-          <span class="stock-name">HDFCBANK</span>
-          <span class="stock-change positive">+1.8% ▲</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹1,685</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹1,715</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹0.30</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹4.80</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹1,715.30</div>
-            <div class="detail-time">🕐 at 1:45 PM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹1,680.20</div>
-            <div class="detail-time">🕐 at 9:15 AM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 85%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹1,680.20</span>
-            <span>High: ₹1,715.30</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 3 - TCS -->
-      <div class="stock-card gainer">
-        <div class="stock-header">
-          <span class="stock-name">TCS</span>
-          <span class="stock-change positive">+1.5% ▲</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹3,892</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹3,950</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹0.00</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹1.50</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹3,950.00</div>
-            <div class="detail-time">🕐 at 3:00 PM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹3,890.50</div>
-            <div class="detail-time">🕐 at 10:00 AM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 95%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹3,890.50</span>
-            <span>High: ₹3,950</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 4 - ICICIBANK -->
-      <div class="stock-card gainer">
-        <div class="stock-header">
-          <span class="stock-name">ICICIBANK</span>
-          <span class="stock-change positive">+1.3% ▲</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹1,145</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹1,160</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹2.40</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹2.20</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹1,162.40</div>
-            <div class="detail-time">🕐 at 2:30 PM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹1,142.80</div>
-            <div class="detail-time">🕐 at 9:45 AM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 82%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹1,142.80</span>
-            <span>High: ₹1,162.40</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 5 - BHARTIARTL -->
-      <div class="stock-card gainer">
-        <div class="stock-header">
-          <span class="stock-name">BHARTIARTL</span>
-          <span class="stock-change positive">+1.1% ▲</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹1,580</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹1,597</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹1.50</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹4.70</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹1,598.50</div>
-            <div class="detail-time">🕐 at 2:00 PM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹1,575.30</div>
-            <div class="detail-time">🕐 at 9:20 AM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 88%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹1,575.30</span>
-            <span>High: ₹1,598.50</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 6 - AXISBANK -->
-      <div class="stock-card gainer">
-        <div class="stock-header">
-          <span class="stock-name">AXISBANK</span>
-          <span class="stock-change positive">+0.9% ▲</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹1,125</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹1,135</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹2.20</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹2.50</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹1,137.20</div>
-            <div class="detail-time">🕐 at 1:30 PM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹1,122.50</div>
-            <div class="detail-time">🕐 at 10:15 AM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 80%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹1,122.50</span>
-            <span>High: ₹1,137.20</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 7 - ITC (LOSER) -->
-      <div class="stock-card loser">
-        <div class="stock-header">
-          <span class="stock-name">ITC</span>
-          <span class="stock-change negative">-1.1% ▼</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹450</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹445</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹7.80</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹4.80</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹452.80</div>
-            <div class="detail-time">🕐 at 9:30 AM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹445.20</div>
-            <div class="detail-time">🕐 at 2:45 PM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 15%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹445.20</span>
-            <span>High: ₹452.80</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 8 - INFY (LOSER) -->
-      <div class="stock-card loser">
-        <div class="stock-header">
-          <span class="stock-name">INFY</span>
-          <span class="stock-change negative">-0.5% ▼</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹1,555</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹1,547</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹11.90</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹7.50</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹1,558.90</div>
-            <div class="detail-time">🕐 at 11:00 AM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹1,547.50</div>
-            <div class="detail-time">🕐 at 3:15 PM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 20%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹1,547.50</span>
-            <span>High: ₹1,558.90</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 9 - WIPRO (LOSER) -->
-      <div class="stock-card loser">
-        <div class="stock-header">
-          <span class="stock-name">WIPRO</span>
-          <span class="stock-change negative">-0.3% ▼</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹483</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹482</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹3.60</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹0.85</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹485.60</div>
-            <div class="detail-time">🕐 at 10:30 AM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹482.15</div>
-            <div class="detail-time">🕐 at 3:20 PM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 25%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹482.15</span>
-            <span>High: ₹485.60</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 10 - SBIN -->
-      <div class="stock-card gainer">
-        <div class="stock-header">
-          <span class="stock-name">SBIN</span>
-          <span class="stock-change positive">+0.8% ▲</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹785</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹791</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹1.50</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹2.70</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹792.50</div>
-            <div class="detail-time">🕐 at 2:20 PM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹782.30</div>
-            <div class="detail-time">🕐 at 9:35 AM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 78%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹782.30</span>
-            <span>High: ₹792.50</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 11 - LT -->
-      <div class="stock-card gainer">
-        <div class="stock-header">
-          <span class="stock-name">LT</span>
-          <span class="stock-change positive">+0.7% ▲</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹3,520</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹3,545</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹3.20</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹4.60</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹3,548.20</div>
-            <div class="detail-time">🕐 at 1:50 PM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹3,515.40</div>
-            <div class="detail-time">🕐 at 10:10 AM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 85%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹3,515.40</span>
-            <span>High: ₹3,548.20</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 12 - MARUTI -->
-      <div class="stock-card gainer">
-        <div class="stock-header">
-          <span class="stock-name">MARUTI</span>
-          <span class="stock-change positive">+0.6% ▲</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹12,850</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹12,928</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹7.70</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹7.70</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹12,935.70</div>
-            <div class="detail-time">🕐 at 2:45 PM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹12,842.30</div>
-            <div class="detail-time">🕐 at 9:25 AM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 88%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹12,842.30</span>
-            <span>High: ₹12,935.70</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 13 - TATAMOTORS -->
-      <div class="stock-card gainer">
-        <div class="stock-header">
-          <span class="stock-name">TATAMOTORS</span>
-          <span class="stock-change positive">+0.5% ▲</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹875</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹879</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹2.50</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹2.80</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹881.50</div>
-            <div class="detail-time">🕐 at 1:15 PM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹872.20</div>
-            <div class="detail-time">🕐 at 10:45 AM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 72%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹872.20</span>
-            <span>High: ₹881.50</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 14 - ASIANPAINT (LOSER) -->
-      <div class="stock-card loser">
-        <div class="stock-header">
-          <span class="stock-name">ASIANPAINT</span>
-          <span class="stock-change negative">-0.4% ▼</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹2,850</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹2,839</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹13.40</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹13.20</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹2,852.40</div>
-            <div class="detail-time">🕐 at 10:20 AM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹2,836.80</div>
-            <div class="detail-time">🕐 at 3:10 PM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 30%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹2,836.80</span>
-            <span>High: ₹2,852.40</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 15 - HINDALCO -->
-      <div class="stock-card gainer">
-        <div class="stock-header">
-          <span class="stock-name">HINDALCO</span>
-          <span class="stock-change positive">+0.4% ▲</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹645</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹648</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹1.80</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹1.50</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹649.80</div>
-            <div class="detail-time">🕐 at 2:10 PM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹643.50</div>
-            <div class="detail-time">🕐 at 9:50 AM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 68%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹643.50</span>
-            <span>High: ₹649.80</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 16 - SUNPHARMA (LOSER) -->
-      <div class="stock-card loser">
-        <div class="stock-header">
-          <span class="stock-name">SUNPHARMA</span>
-          <span class="stock-change negative">-0.2% ▼</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹1,725</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹1,722</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹6.50</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹4.70</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹1,728.50</div>
-            <div class="detail-time">🕐 at 11:30 AM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹1,720.30</div>
-            <div class="detail-time">🕐 at 2:50 PM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 35%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹1,720.30</span>
-            <span>High: ₹1,728.50</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 17 - KOTAKBANK -->
-      <div class="stock-card gainer">
-        <div class="stock-header">
-          <span class="stock-name">KOTAKBANK</span>
-          <span class="stock-change positive">+0.3% ▲</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹1,820</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹1,825</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹2.60</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹2.60</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹1,827.60</div>
-            <div class="detail-time">🕐 at 1:20 PM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹1,817.40</div>
-            <div class="detail-time">🕐 at 10:30 AM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 65%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹1,817.40</span>
-            <span>High: ₹1,827.60</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 18 - ULTRACEMCO (LOSER) -->
-      <div class="stock-card loser">
-        <div class="stock-header">
-          <span class="stock-name">ULTRACEMCO</span>
-          <span class="stock-change negative">-0.2% ▼</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹10,550</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹10,529</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹33.30</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹24.30</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹10,562.30</div>
-            <div class="detail-time">🕐 at 10:00 AM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹10,525.70</div>
-            <div class="detail-time">🕐 at 3:00 PM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 28%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹10,525.70</span>
-            <span>High: ₹10,562.30</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 19 - POWERGRID (LOSER) -->
-      <div class="stock-card loser">
-        <div class="stock-header">
-          <span class="stock-name">POWERGRID</span>
-          <span class="stock-change negative">-0.1% ▼</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹315</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹314.70</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹1.50</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹0.50</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹316.20</div>
-            <div class="detail-time">🕐 at 11:45 AM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹314.50</div>
-            <div class="detail-time">🕐 at 2:30 PM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 32%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹314.50</span>
-            <span>High: ₹316.20</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- STOCK 20 - NTPC -->
-      <div class="stock-card gainer">
-        <div class="stock-header">
-          <span class="stock-name">NTPC</span>
-          <span class="stock-change positive">+0.2% ▲</span>
-        </div>
-
-        <div class="price-info">
-          <div class="price-box">
-            <div class="price-label">Open</div>
-            <div class="price-value">₹365</div>
-          </div>
-          <div class="price-box">
-            <div class="price-label">Close</div>
-            <div class="price-value">₹365.70</div>
-          </div>
-          <div class="price-box" style="background: #d5f4e6;">
-            <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-            <div class="price-value" style="color: #27ae60;">₹0.80</div>
-          </div>
-          <div class="price-box" style="background: #fadbd8;">
-            <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-            <div class="price-value" style="color: #e74c3c;">₹0.80</div>
-          </div>
-        </div>
-
-        <div class="highlow-details">
-          <div class="detail-box high">
-            <div class="detail-label">📈 Day High</div>
-            <div class="detail-price high-price">₹366.50</div>
-            <div class="detail-time">🕐 at 1:55 PM</div>
-          </div>
-          <div class="detail-box low">
-            <div class="detail-label">📉 Day Low</div>
-            <div class="detail-price low-price">₹364.20</div>
-            <div class="detail-time">🕐 at 9:40 AM</div>
-          </div>
-        </div>
-
-        <div class="range-bar">
-          <div class="range-label">Current Price Position</div>
-          <div class="bar-container">
-            <div class="current-marker" style="left: 62%;"></div>
-          </div>
-          <div class="range-values">
-            <span>Low: ₹364.20</span>
-            <span>High: ₹366.50</span>
-          </div>
-        </div>
+      <div class="stocks-grid" id="stocks-grid"></div>
+
+      <div class="footer">
+        <p>📊 Stock data updated in real-time from Excel analysis</p>
+        <p style="margin-top: 10px; font-size: 12px;">
+          High/Low times help identify best trading windows • Green = Gainer • Red = Loser
+        </p>
       </div>
 
     </div>
-
-    <!-- FOOTER -->
-    <div class="footer">
-      <p>📊 Stock data updated in real-time from Excel analysis</p>
-      <p style="margin-top: 10px; font-size: 12px;">
-        High/Low times help identify best trading windows • Green = Gainer • Red = Loser
-      </p>
-    </div>
-
   </div>
 
   <script>
-    // Update date and time
-    const now = new Date();
+    async function loadAllStocks() {
+      try {
+        const response = await fetch('dashboard_data.json');
+        const data = await response.json();
 
-    const dateString = now.toLocaleDateString('en-IN', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    });
-    document.getElementById('current-date').textContent = dateString;
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('all-stocks').style.display = 'block';
 
-    const timeString = now.toLocaleTimeString('en-IN', {
-      hour: 'numeric',
-      minute: '2-digit',
-      hour12: true
-    });
-    document.getElementById('update-time').textContent = timeString;
+        // Update header
+        document.getElementById('current-date').textContent = data.date;
+        document.getElementById('update-time').textContent = data.updated_time;
+
+        // Update stats
+        document.getElementById('gainers-count').textContent = data.stats.gainers_count;
+        document.getElementById('losers-count').textContent = data.stats.losers_count;
+        document.getElementById('avg-volatility').textContent = data.stats.avg_volatility + '%';
+        document.getElementById('total-stocks').textContent = data.stats.total_stocks;
+
+        // Render all stocks
+        const stocksGrid = document.getElementById('stocks-grid');
+        stocksGrid.innerHTML = data.all_stocks.map(stock => {
+          const cardClass = stock.change_pct > 0 ? 'gainer' : stock.change_pct < 0 ? 'loser' : '';
+          const changeClass = stock.change_pct >= 0 ? 'positive' : 'negative';
+          const changeSymbol = stock.change_pct >= 0 ? '▲' : '▼';
+          const changeSign = stock.change_pct >= 0 ? '+' : '';
+
+          // Calculate position of current price in range (0-100%)
+          const range = stock.high - stock.low;
+          const position = range > 0 ? ((stock.close - stock.low) / range) * 100 : 50;
+
+          return `
+            <div class="stock-card ${cardClass}">
+              <div class="stock-header">
+                <span class="stock-name">${stock.name}</span>
+                <span class="stock-change ${changeClass}">${changeSign}${stock.change_pct}% ${changeSymbol}</span>
+              </div>
+
+              <div class="price-info">
+                <div class="price-box">
+                  <div class="price-label">Open</div>
+                  <div class="price-value">₹${stock.open}</div>
+                </div>
+                <div class="price-box">
+                  <div class="price-label">Close</div>
+                  <div class="price-value">₹${stock.close}</div>
+                </div>
+                <div class="price-box" style="background: #d5f4e6;">
+                  <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
+                  <div class="price-value" style="color: #27ae60;">₹${stock.green_shadow}</div>
+                </div>
+                <div class="price-box" style="background: #fadbd8;">
+                  <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
+                  <div class="price-value" style="color: #e74c3c;">₹${stock.red_shadow}</div>
+                </div>
+              </div>
+
+              <div class="highlow-details">
+                <div class="detail-box high">
+                  <div class="detail-label">📈 Day High</div>
+                  <div class="detail-price high-price">₹${stock.high}</div>
+                  <div class="detail-time">🕐 at ${stock.high_time}</div>
+                </div>
+                <div class="detail-box low">
+                  <div class="detail-label">📉 Day Low</div>
+                  <div class="detail-price low-price">₹${stock.low}</div>
+                  <div class="detail-time">🕐 at ${stock.low_time}</div>
+                </div>
+              </div>
+
+              <div class="range-bar">
+                <div class="range-label">Current Price Position</div>
+                <div class="bar-container">
+                  <div class="current-marker" style="left: ${position}%;"></div>
+                </div>
+                <div class="range-values">
+                  <span>Low: ₹${stock.low}</span>
+                  <span>High: ₹${stock.high}</span>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+      } catch (error) {
+        document.getElementById('loading').innerHTML =
+          `<p style="color: #e74c3c;">Error loading data: ${error.message}</p>
+           <p>Please make sure dashboard_data.json is in the same folder.</p>`;
+      }
+    }
+
+    loadAllStocks();
   </script>
 
 </body>

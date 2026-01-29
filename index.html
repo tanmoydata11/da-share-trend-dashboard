@@ -1,58 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stock Dashboard - Complete View</title>
-  
+  <title>Stock Dashboard - Dynamic View</title>
+
   <style>
-    /* ========================================
-       COMPLETE CSS - EMBEDDED IN HTML
-       Simple, clean theme with High/Low display
-       ======================================== */
-    
+    /* Same CSS as before */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f5f5f5;
       color: #333;
       padding: 20px;
     }
-    
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
       background: white;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       padding: 20px;
     }
-    
-    /* HEADER */
+
     .header {
       text-align: center;
       padding: 20px 0;
       border-bottom: 3px solid #4CAF50;
       margin-bottom: 30px;
     }
-    
+
     .header h1 {
       color: #2c3e50;
       font-size: 32px;
       margin-bottom: 10px;
     }
-    
+
     .date-info {
       color: #7f8c8d;
       font-size: 16px;
     }
-    
-    /* MARKET MOOD */
+
     .market-mood {
       text-align: center;
       padding: 30px;
@@ -61,19 +56,26 @@
       margin-bottom: 30px;
       color: white;
     }
-    
+
+    .market-mood.positive {
+      background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+    }
+
+    .market-mood.negative {
+      background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+    }
+
     .mood-emoji {
       font-size: 60px;
       margin-bottom: 10px;
     }
-    
+
     .mood-text {
       font-size: 28px;
       font-weight: bold;
       text-transform: uppercase;
     }
-    
-    /* PORTFOLIO VALUE */
+
     .portfolio-value {
       text-align: center;
       padding: 20px;
@@ -82,31 +84,29 @@
       color: white;
       margin-bottom: 30px;
     }
-    
+
     .value-label {
       font-size: 16px;
       opacity: 0.9;
     }
-    
+
     .value-amount {
       font-size: 42px;
       font-weight: bold;
       margin: 10px 0;
     }
-    
+
     .value-change {
       font-size: 20px;
     }
-    
-    /* GRID SYSTEM */
+
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       margin-bottom: 30px;
     }
-    
-    /* CARDS */
+
     .card {
       background: white;
       border: 2px solid #e0e0e0;
@@ -114,12 +114,12 @@
       padding: 20px;
       transition: transform 0.3s;
     }
-    
+
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
-    
+
     .card-title {
       font-size: 18px;
       color: #2c3e50;
@@ -128,12 +128,11 @@
       border-bottom: 2px solid #3498db;
       padding-bottom: 10px;
     }
-    
-    /* STOCK LIST */
+
     .stock-list {
       list-style: none;
     }
-    
+
     .stock-item {
       padding: 15px;
       margin-bottom: 15px;
@@ -141,96 +140,93 @@
       background: #f8f9fa;
       transition: background 0.3s;
     }
-    
+
     .stock-item:hover {
       background: #e9ecef;
     }
-    
+
     .stock-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10px;
     }
-    
+
     .stock-name {
       font-weight: bold;
       font-size: 16px;
       color: #2c3e50;
     }
-    
+
     .stock-change {
       font-size: 18px;
       font-weight: bold;
       padding: 5px 15px;
       border-radius: 20px;
     }
-    
-    /* HIGH/LOW DISPLAY */
+
     .stock-details {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
       margin-top: 8px;
     }
-    
+
     .detail-box {
       padding: 8px;
       border-radius: 6px;
       font-size: 13px;
     }
-    
+
     .detail-box.high {
       background: #e8f5e9;
       border-left: 3px solid #27ae60;
     }
-    
+
     .detail-box.low {
       background: #ffebee;
       border-left: 3px solid #e74c3c;
     }
-    
+
     .detail-label {
       font-weight: bold;
       margin-bottom: 4px;
     }
-    
+
     .detail-price {
       font-size: 15px;
       font-weight: bold;
     }
-    
+
     .detail-price.high-price {
       color: #27ae60;
     }
-    
+
     .detail-price.low-price {
       color: #e74c3c;
     }
-    
+
     .detail-time {
       font-size: 11px;
       color: #7f8c8d;
       margin-top: 2px;
     }
-    
-    /* POSITIVE/NEGATIVE */
+
     .positive {
       color: #27ae60;
       background: #d5f4e6;
     }
-    
+
     .negative {
       color: #e74c3c;
       background: #fadbd8;
     }
-    
-    /* VIEW ALL BUTTON */
+
     .view-all-btn {
       text-align: center;
       margin: 30px 0;
     }
-    
+
     .view-all-btn a {
       display: inline-block;
       padding: 15px 40px;
@@ -243,12 +239,11 @@
       box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
       transition: transform 0.3s;
     }
-    
+
     .view-all-btn a:hover {
       transform: scale(1.05);
     }
-    
-    /* ADVICE BOX */
+
     .advice-box {
       background: #fff3cd;
       border-left: 4px solid #ffc107;
@@ -256,40 +251,45 @@
       border-radius: 5px;
       margin-top: 20px;
     }
-    
+
     .advice-box h3 {
       color: #856404;
       margin-bottom: 15px;
     }
-    
+
     .advice-list {
       list-style: none;
     }
-    
+
     .advice-list li {
       padding: 8px 0;
       color: #856404;
     }
-    
+
     .advice-list li:before {
       content: "💡 ";
       margin-right: 10px;
     }
-    
-    /* RESPONSIVE */
+
+    .loading {
+      text-align: center;
+      padding: 50px;
+      font-size: 18px;
+    }
+
     @media (max-width: 768px) {
       .grid {
         grid-template-columns: 1fr;
       }
-      
+
       .header h1 {
         font-size: 24px;
       }
-      
+
       .value-amount {
         font-size: 32px;
       }
-      
+
       .stock-details {
         grid-template-columns: 1fr;
       }
@@ -299,211 +299,158 @@
 
 <body>
   <div class="container">
-    
-    <!-- HEADER -->
-    <div class="header">
-      <h1>📊 Stock Market Dashboard</h1>
-      <div class="date-info">
-        📅 <span id="current-date">28 January 2026</span> | 
-        🕐 Last Updated: <span id="update-time">3:30 PM</span>
+    <div id="loading" class="loading">Loading stock data...</div>
+    <div id="dashboard" style="display:none;">
+
+      <!-- HEADER -->
+      <div class="header">
+        <h1>📊 Stock Market Dashboard</h1>
+        <div class="date-info">
+          📅 <span id="current-date"></span> |
+          🕐 Last Updated: <span id="update-time"></span>
+        </div>
       </div>
-    </div>
-    
-    <!-- MARKET MOOD -->
-    <div class="market-mood">
-      <div class="mood-emoji">😊</div>
-      <div class="mood-text">Market is Positive</div>
-      <div style="margin-top: 15px; font-size: 18px;">
-        Overall Change: <strong>+1.2%</strong>
+
+      <!-- MARKET MOOD -->
+      <div id="market-mood" class="market-mood">
+        <div class="mood-emoji" id="mood-emoji"></div>
+        <div class="mood-text" id="mood-text"></div>
+        <div style="margin-top: 15px; font-size: 18px;">
+          Overall Change: <strong id="overall-change"></strong>
+        </div>
       </div>
-    </div>
-    
-    <!-- PORTFOLIO VALUE -->
-    <div class="portfolio-value">
-      <div class="value-label">💰 Total Portfolio Value</div>
-      <div class="value-amount">₹15,00,000</div>
-      <div class="value-change">
-        Today's Change: <strong>+₹18,000 (+1.2%)</strong>
+
+      <!-- PORTFOLIO VALUE -->
+      <div class="portfolio-value">
+        <div class="value-label">💰 Total Portfolio Value</div>
+        <div class="value-amount" id="portfolio-value"></div>
+        <div class="value-change">
+          Today's Change: <strong id="portfolio-change"></strong>
+        </div>
       </div>
-    </div>
-    
-    <!-- GRID OF CARDS -->
-    <div class="grid">
-      
-      <!-- TOP GAINERS CARD -->
-      <div class="card">
-        <div class="card-title">🏆 Today's Winners</div>
-        <ul class="stock-list">
-          
-          <!-- STOCK 1 -->
-          <li class="stock-item">
-            <div class="stock-header">
-              <span class="stock-name">RELIANCE</span>
-              <span class="stock-change positive">+2.5% ▲</span>
-            </div>
-            <div class="stock-details">
-              <div class="detail-box high">
-                <div class="detail-label">📈 Day High</div>
-                <div class="detail-price high-price">₹2,475.50</div>
-                <div class="detail-time">at 2:15 PM</div>
-              </div>
-              <div class="detail-box low">
-                <div class="detail-label">📉 Day Low</div>
-                <div class="detail-price low-price">₹2,405.00</div>
-                <div class="detail-time">at 9:30 AM</div>
-              </div>
-            </div>
-          </li>
-          
-          <!-- STOCK 2 -->
-          <li class="stock-item">
-            <div class="stock-header">
-              <span class="stock-name">HDFCBANK</span>
-              <span class="stock-change positive">+1.8% ▲</span>
-            </div>
-            <div class="stock-details">
-              <div class="detail-box high">
-                <div class="detail-label">📈 Day High</div>
-                <div class="detail-price high-price">₹1,715.30</div>
-                <div class="detail-time">at 1:45 PM</div>
-              </div>
-              <div class="detail-box low">
-                <div class="detail-label">📉 Day Low</div>
-                <div class="detail-price low-price">₹1,680.20</div>
-                <div class="detail-time">at 9:15 AM</div>
-              </div>
-            </div>
-          </li>
-          
-          <!-- STOCK 3 -->
-          <li class="stock-item">
-            <div class="stock-header">
-              <span class="stock-name">TCS</span>
-              <span class="stock-change positive">+1.5% ▲</span>
-            </div>
-            <div class="stock-details">
-              <div class="detail-box high">
-                <div class="detail-label">📈 Day High</div>
-                <div class="detail-price high-price">₹3,950.00</div>
-                <div class="detail-time">at 3:00 PM</div>
-              </div>
-              <div class="detail-box low">
-                <div class="detail-label">📉 Day Low</div>
-                <div class="detail-price low-price">₹3,890.50</div>
-                <div class="detail-time">at 10:00 AM</div>
-              </div>
-            </div>
-          </li>
-          
-        </ul>
+
+      <!-- GRID OF CARDS -->
+      <div class="grid">
+        <!-- TOP GAINERS CARD -->
+        <div class="card">
+          <div class="card-title">🏆 Today's Winners</div>
+          <ul class="stock-list" id="gainers-list"></ul>
+        </div>
+
+        <!-- TOP LOSERS CARD -->
+        <div class="card">
+          <div class="card-title">⚠️ Today's Losers</div>
+          <ul class="stock-list" id="losers-list"></ul>
+        </div>
       </div>
-      
-      <!-- TOP LOSERS CARD -->
-      <div class="card">
-        <div class="card-title">⚠️ Today's Losers</div>
-        <ul class="stock-list">
-          
-          <!-- STOCK 1 -->
-          <li class="stock-item">
-            <div class="stock-header">
-              <span class="stock-name">ITC</span>
-              <span class="stock-change negative">-1.1% ▼</span>
-            </div>
-            <div class="stock-details">
-              <div class="detail-box high">
-                <div class="detail-label">📈 Day High</div>
-                <div class="detail-price high-price">₹452.80</div>
-                <div class="detail-time">at 9:30 AM</div>
-              </div>
-              <div class="detail-box low">
-                <div class="detail-label">📉 Day Low</div>
-                <div class="detail-price low-price">₹445.20</div>
-                <div class="detail-time">at 2:45 PM</div>
-              </div>
-            </div>
-          </li>
-          
-          <!-- STOCK 2 -->
-          <li class="stock-item">
-            <div class="stock-header">
-              <span class="stock-name">INFY</span>
-              <span class="stock-change negative">-0.5% ▼</span>
-            </div>
-            <div class="stock-details">
-              <div class="detail-box high">
-                <div class="detail-label">📈 Day High</div>
-                <div class="detail-price high-price">₹1,558.90</div>
-                <div class="detail-time">at 11:00 AM</div>
-              </div>
-              <div class="detail-box low">
-                <div class="detail-label">📉 Day Low</div>
-                <div class="detail-price low-price">₹1,547.50</div>
-                <div class="detail-time">at 3:15 PM</div>
-              </div>
-            </div>
-          </li>
-          
-          <!-- STOCK 3 -->
-          <li class="stock-item">
-            <div class="stock-header">
-              <span class="stock-name">WIPRO</span>
-              <span class="stock-change negative">-0.3% ▼</span>
-            </div>
-            <div class="stock-details">
-              <div class="detail-box high">
-                <div class="detail-label">📈 Day High</div>
-                <div class="detail-price high-price">₹485.60</div>
-                <div class="detail-time">at 10:30 AM</div>
-              </div>
-              <div class="detail-box low">
-                <div class="detail-label">📉 Day Low</div>
-                <div class="detail-price low-price">₹482.15</div>
-                <div class="detail-time">at 3:20 PM</div>
-              </div>
-            </div>
-          </li>
-          
-        </ul>
+
+      <!-- VIEW ALL STOCKS BUTTON -->
+      <div class="view-all-btn">
+        <a href="all-stocks.html">📊 View All Stocks With High/Low Data →</a>
       </div>
-      
+
+      <!-- ADVICE BOX -->
+      <div class="advice-box">
+        <h3>💡 Simple Advice for Today</h3>
+        <ul class="advice-list" id="insights-list"></ul>
+      </div>
+
     </div>
-    
-    <!-- VIEW ALL STOCKS BUTTON -->
-    <div class="view-all-btn">
-      <a href="all-stocks.html">📊 View All Stocks With High/Low Data →</a>
-    </div>
-    
-    <!-- ADVICE BOX -->
-    <div class="advice-box">
-      <h3>💡 Simple Advice for Today</h3>
-      <ul class="advice-list">
-        <li>RELIANCE hit high at 2:15 PM (₹2,475) - Strong afternoon momentum</li>
-        <li>Banking stocks performing well - HDFC peaked at 1:45 PM</li>
-        <li>ITC dropping since morning - Avoid entry today</li>
-        <li>Best trading window was 1:00 PM - 2:30 PM (high activity)</li>
-      </ul>
-    </div>
-    
   </div>
-  
+
   <script>
-    // Update date and time
-    const now = new Date();
-    
-    const dateString = now.toLocaleDateString('en-IN', { 
-      day: 'numeric', 
-      month: 'long', 
-      year: 'numeric' 
-    });
-    document.getElementById('current-date').textContent = dateString;
-    
-    const timeString = now.toLocaleTimeString('en-IN', { 
-      hour: 'numeric', 
-      minute: '2-digit',
-      hour12: true 
-    });
-    document.getElementById('update-time').textContent = timeString;
+    // Load dashboard data
+    async function loadDashboard() {
+      try {
+        const response = await fetch('dashboard_data.json');
+        const data = await response.json();
+
+        // Hide loading, show dashboard
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'block';
+
+        // Update header
+        document.getElementById('current-date').textContent = data.date;
+        document.getElementById('update-time').textContent = data.updated_time;
+
+        // Update market mood
+        const moodDiv = document.getElementById('market-mood');
+        moodDiv.className = 'market-mood ' + data.mood;
+        document.getElementById('mood-emoji').textContent = data.mood_emoji;
+        document.getElementById('mood-text').textContent = 'Market is ' + data.mood;
+        document.getElementById('overall-change').textContent =
+          (data.portfolio.change_pct >= 0 ? '+' : '') + data.portfolio.change_pct + '%';
+
+        // Update portfolio
+        document.getElementById('portfolio-value').textContent =
+          '₹' + data.portfolio.total.toLocaleString('en-IN');
+        document.getElementById('portfolio-change').textContent =
+          (data.portfolio.change >= 0 ? '+' : '') + '₹' + data.portfolio.change.toLocaleString('en-IN') +
+          ' (' + (data.portfolio.change_pct >= 0 ? '+' : '') + data.portfolio.change_pct + '%)';
+
+        // Render gainers
+        const gainersList = document.getElementById('gainers-list');
+        gainersList.innerHTML = data.top_gainers.map(stock => `
+          <li class="stock-item">
+            <div class="stock-header">
+              <span class="stock-name">${stock.name}</span>
+              <span class="stock-change positive">+${stock.change_pct}% ▲</span>
+            </div>
+            <div class="stock-details">
+              <div class="detail-box high">
+                <div class="detail-label">📈 Day High</div>
+                <div class="detail-price high-price">₹${stock.high}</div>
+                <div class="detail-time">at ${stock.high_time}</div>
+              </div>
+              <div class="detail-box low">
+                <div class="detail-label">📉 Day Low</div>
+                <div class="detail-price low-price">₹${stock.low}</div>
+                <div class="detail-time">at ${stock.low_time}</div>
+              </div>
+            </div>
+          </li>
+        `).join('');
+
+        // Render losers
+        const losersList = document.getElementById('losers-list');
+        losersList.innerHTML = data.top_losers.map(stock => `
+          <li class="stock-item">
+            <div class="stock-header">
+              <span class="stock-name">${stock.name}</span>
+              <span class="stock-change negative">${stock.change_pct}% ▼</span>
+            </div>
+            <div class="stock-details">
+              <div class="detail-box high">
+                <div class="detail-label">📈 Day High</div>
+                <div class="detail-price high-price">₹${stock.high}</div>
+                <div class="detail-time">at ${stock.high_time}</div>
+              </div>
+              <div class="detail-box low">
+                <div class="detail-label">📉 Day Low</div>
+                <div class="detail-price low-price">₹${stock.low}</div>
+                <div class="detail-time">at ${stock.low_time}</div>
+              </div>
+            </div>
+          </li>
+        `).join('');
+
+        // Render insights
+        const insightsList = document.getElementById('insights-list');
+        insightsList.innerHTML = data.insights.map(insight =>
+          `<li>${insight}</li>`
+        ).join('');
+
+      } catch (error) {
+        document.getElementById('loading').innerHTML =
+          `<p style="color: #e74c3c;">Error loading data: ${error.message}</p>
+           <p>Please make sure dashboard_data.json is in the same folder.</p>`;
+      }
+    }
+
+    // Load data when page loads
+    loadDashboard();
   </script>
-  
+
 </body>
+
 </html>
