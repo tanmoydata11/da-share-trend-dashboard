@@ -1,0 +1,171 @@
+{
+  "name": "IDEA",
+  "current_price": 9.99,
+  "open": 10.06,
+  "high": 10.06,
+  "low": 9.73,
+  "change": -0.07,
+  "change_pct": -0.7,
+  "date": "29-01-2026",
+  "updated_time": "08:18 PM",
+  "ema": {
+    "ema_9": 10.24,
+    "ema_20": null,
+    "ema_200": null
+  },
+  "trend": {
+    "overall": "Bearish",
+    "signal": "SELL",
+    "short_term": "Bearish",
+    "medium_term": "Bearish",
+    "long_term": "N/A"
+  },
+  "support_resistance": {
+    "resistance": 10.71,
+    "support": 9.73,
+    "distance_to_resistance": 0.72,
+    "distance_to_support": 0.26
+  },
+  "historical": {
+    "dates": [
+      "19-01-2026",
+      "20-01-2026",
+      "21-01-2026",
+      "22-01-2026",
+      "23-01-2026",
+      "26-01-2026",
+      "27-01-2026",
+      "28-01-2026",
+      "29-01-2026",
+      "30-01-2026"
+    ],
+    "prices": [
+      11.06,
+      10.79,
+      10.58,
+      10.14,
+      10.21,
+      10.21,
+      9.89,
+      9.88,
+      10.06,
+      9.99
+    ]
+  },
+  "intraday": [
+    {
+      "time": "09:15",
+      "price": 10.06
+    },
+    {
+      "time": "09:30",
+      "price": 9.96
+    },
+    {
+      "time": "09:45",
+      "price": 9.91
+    },
+    {
+      "time": "10:00",
+      "price": 9.88
+    },
+    {
+      "time": "10:15",
+      "price": 9.75
+    },
+    {
+      "time": "10:30",
+      "price": 9.8
+    },
+    {
+      "time": "10:45",
+      "price": 9.73
+    },
+    {
+      "time": "11:00",
+      "price": 9.75
+    },
+    {
+      "time": "11:15",
+      "price": 9.78
+    },
+    {
+      "time": "11:30",
+      "price": 9.77
+    },
+    {
+      "time": "11:45",
+      "price": 9.82
+    },
+    {
+      "time": "12:00",
+      "price": 9.82
+    },
+    {
+      "time": "12:15",
+      "price": 9.82
+    },
+    {
+      "time": "12:30",
+      "price": 9.82
+    },
+    {
+      "time": "12:45",
+      "price": 9.81
+    },
+    {
+      "time": "13:00",
+      "price": 9.86
+    },
+    {
+      "time": "13:15",
+      "price": 9.84
+    },
+    {
+      "time": "13:30",
+      "price": 9.87
+    },
+    {
+      "time": "13:45",
+      "price": 9.93
+    },
+    {
+      "time": "14:00",
+      "price": 9.87
+    },
+    {
+      "time": "14:15",
+      "price": 9.83
+    },
+    {
+      "time": "14:30",
+      "price": 9.92
+    },
+    {
+      "time": "14:45",
+      "price": 9.92
+    },
+    {
+      "time": "15:00",
+      "price": 10.04
+    },
+    {
+      "time": "15:15",
+      "price": 10.03
+    },
+    {
+      "time": "15:30",
+      "price": 9.99
+    }
+  ],
+  "shadows": {
+    "green_shadow": 0.07,
+    "red_shadow": 0.33
+  },
+  "key_levels": {
+    "day_high": 10.06,
+    "day_high_time": "09:15",
+    "day_low": 9.73,
+    "day_low_time": "10:45"
+  }
+}

@@ -117,6 +117,10 @@
       border-radius: 10px;
       padding: 20px;
       transition: all 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
 
     .stock-card:hover {
@@ -404,10 +408,10 @@
           const position = range > 0 ? ((stock.close - stock.low) / range) * 100 : 50;
 
           return `
-            <div class="stock-card ${cardClass}">
+            <a href="stock-detail.html?stock=${stock.name}" class="stock-card ${cardClass}">
               <div class="stock-header">
                 <span class="stock-name">${stock.name}</span>
-                <span class="stock-change ${changeClass}">${changeSign}${stock.change_pct}% ${changeSymbol}</span>
+                <span class="stock-change ${changeClass}">${changeSign}₹${Math.abs(stock.change)} / ${changeSign}${stock.change_pct}% ${changeSymbol}</span>
               </div>
 
               <div class="price-info">
@@ -452,7 +456,11 @@
                   <span>High: ₹${stock.high}</span>
                 </div>
               </div>
-            </div>
+              
+              <div style="text-align: center; margin-top: 15px; color: #667eea; font-weight: bold;">
+                Click for detailed analysis →
+              </div>
+            </a>
           `;
         }).join('');
 

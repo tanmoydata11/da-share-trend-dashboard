@@ -1,0 +1,171 @@
+{
+  "name": "INFY",
+  "current_price": 1659.5,
+  "open": 1644.8,
+  "high": 1663.1,
+  "low": 1644.8,
+  "change": 14.7,
+  "change_pct": 0.89,
+  "date": "29-01-2026",
+  "updated_time": "08:18 PM",
+  "ema": {
+    "ema_9": 1660.35,
+    "ema_20": null,
+    "ema_200": null
+  },
+  "trend": {
+    "overall": "Bearish",
+    "signal": "SELL",
+    "short_term": "Bearish",
+    "medium_term": "Bearish",
+    "long_term": "N/A"
+  },
+  "support_resistance": {
+    "resistance": 1684.6,
+    "support": 1632.5,
+    "distance_to_resistance": 25.1,
+    "distance_to_support": 27.0
+  },
+  "historical": {
+    "dates": [
+      "19-01-2026",
+      "20-01-2026",
+      "21-01-2026",
+      "22-01-2026",
+      "23-01-2026",
+      "26-01-2026",
+      "27-01-2026",
+      "28-01-2026",
+      "29-01-2026",
+      "30-01-2026"
+    ],
+    "prices": [
+      1607.0,
+      1689.1,
+      1678.0,
+      1658.9,
+      1655.1,
+      1663.5,
+      1672.0,
+      1682.7,
+      1666.5,
+      1659.5
+    ]
+  },
+  "intraday": [
+    {
+      "time": "09:15",
+      "price": 1644.8
+    },
+    {
+      "time": "09:30",
+      "price": 1647.4
+    },
+    {
+      "time": "09:45",
+      "price": 1645.6
+    },
+    {
+      "time": "10:00",
+      "price": 1646.1
+    },
+    {
+      "time": "10:15",
+      "price": 1648.8
+    },
+    {
+      "time": "10:30",
+      "price": 1648.1
+    },
+    {
+      "time": "10:45",
+      "price": 1645.1
+    },
+    {
+      "time": "11:00",
+      "price": 1649.7
+    },
+    {
+      "time": "11:15",
+      "price": 1649.3
+    },
+    {
+      "time": "11:30",
+      "price": 1650.2
+    },
+    {
+      "time": "11:45",
+      "price": 1650.4
+    },
+    {
+      "time": "12:00",
+      "price": 1647.6
+    },
+    {
+      "time": "12:15",
+      "price": 1647.2
+    },
+    {
+      "time": "12:30",
+      "price": 1651.2
+    },
+    {
+      "time": "12:45",
+      "price": 1658.6
+    },
+    {
+      "time": "13:00",
+      "price": 1659.1
+    },
+    {
+      "time": "13:15",
+      "price": 1659.9
+    },
+    {
+      "time": "13:30",
+      "price": 1661.3
+    },
+    {
+      "time": "13:45",
+      "price": 1663.1
+    },
+    {
+      "time": "14:00",
+      "price": 1661.3
+    },
+    {
+      "time": "14:15",
+      "price": 1659.1
+    },
+    {
+      "time": "14:30",
+      "price": 1659.6
+    },
+    {
+      "time": "14:45",
+      "price": 1662.0
+    },
+    {
+      "time": "15:00",
+      "price": 1661.3
+    },
+    {
+      "time": "15:15",
+      "price": 1657.7
+    },
+    {
+      "time": "15:30",
+      "price": 1659.5
+    }
+  ],
+  "shadows": {
+    "green_shadow": 3.6,
+    "red_shadow": 0.0
+  },
+  "key_levels": {
+    "day_high": 1663.1,
+    "day_high_time": "13:45",
+    "day_low": 1644.8,
+    "day_low_time": "09:15"
+  }
+}
