@@ -1,16 +1,16 @@
 {
   "name": "ITC",
-  "current_price": 318.8,
-  "open": 320.1,
-  "high": 320.1,
-  "low": 318.4,
-  "change": -1.3,
-  "change_pct": -0.41,
-  "date": "29-01-2026",
-  "updated_time": "08:18 PM",
+  "current_price": 322.15,
+  "open": 319.15,
+  "high": 324.3,
+  "low": 319.15,
+  "change": 3.0,
+  "change_pct": 0.94,
+  "date": "30-01-2026",
+  "updated_time": "06:11 PM",
   "ema": {
-    "ema_9": 325.2,
-    "ema_20": null,
+    "ema_9": 324.59,
+    "ema_20": 333.12,
     "ema_200": null
   },
   "trend": {
@@ -23,8 +23,8 @@
   "support_resistance": {
     "resistance": 334.6,
     "support": 318.4,
-    "distance_to_resistance": 15.8,
-    "distance_to_support": 0.4
+    "distance_to_resistance": 12.45,
+    "distance_to_support": 3.75
   },
   "historical": {
     "dates": [
@@ -40,7 +40,6 @@
       "30-01-2026"
     ],
     "prices": [
-      334.85,
       328.95,
       333.0,
       326.2,
@@ -49,123 +48,124 @@
       323.2,
       319.8,
       321.4,
-      318.8
+      318.8,
+      322.15
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 320.1
-    },
-    {
-      "time": "09:30",
-      "price": 319.95
-    },
-    {
-      "time": "09:45",
-      "price": 318.8
-    },
-    {
-      "time": "10:00",
-      "price": 318.85
-    },
-    {
-      "time": "10:15",
-      "price": 318.7
-    },
-    {
-      "time": "10:30",
-      "price": 318.75
-    },
-    {
-      "time": "10:45",
-      "price": 318.8
-    },
-    {
-      "time": "11:00",
-      "price": 319.2
-    },
-    {
-      "time": "11:15",
-      "price": 319.7
-    },
-    {
-      "time": "11:30",
-      "price": 319.5
-    },
-    {
-      "time": "11:45",
-      "price": 318.8
-    },
-    {
-      "time": "12:00",
-      "price": 318.7
-    },
-    {
-      "time": "12:15",
-      "price": 318.5
-    },
-    {
-      "time": "12:30",
-      "price": 318.65
-    },
-    {
-      "time": "12:45",
-      "price": 318.9
-    },
-    {
-      "time": "13:00",
-      "price": 319.0
-    },
-    {
-      "time": "13:15",
-      "price": 318.7
-    },
-    {
-      "time": "13:30",
-      "price": 318.85
-    },
-    {
-      "time": "13:45",
-      "price": 318.9
-    },
-    {
-      "time": "14:00",
-      "price": 318.65
-    },
-    {
-      "time": "14:15",
-      "price": 319.0
-    },
-    {
-      "time": "14:30",
       "price": 319.15
     },
     {
+      "time": "09:30",
+      "price": 322.1
+    },
+    {
+      "time": "09:45",
+      "price": 322.35
+    },
+    {
+      "time": "10:00",
+      "price": 324.3
+    },
+    {
+      "time": "10:15",
+      "price": 322.5
+    },
+    {
+      "time": "10:30",
+      "price": 322.35
+    },
+    {
+      "time": "10:45",
+      "price": 321.75
+    },
+    {
+      "time": "11:00",
+      "price": 320.35
+    },
+    {
+      "time": "11:15",
+      "price": 319.9
+    },
+    {
+      "time": "11:30",
+      "price": 321.15
+    },
+    {
+      "time": "11:45",
+      "price": 320.6
+    },
+    {
+      "time": "12:00",
+      "price": 320.2
+    },
+    {
+      "time": "12:15",
+      "price": 320.9
+    },
+    {
+      "time": "12:30",
+      "price": 321.4
+    },
+    {
+      "time": "12:45",
+      "price": 321.3
+    },
+    {
+      "time": "13:00",
+      "price": 321.3
+    },
+    {
+      "time": "13:15",
+      "price": 320.75
+    },
+    {
+      "time": "13:30",
+      "price": 321.25
+    },
+    {
+      "time": "13:45",
+      "price": 322.3
+    },
+    {
+      "time": "14:00",
+      "price": 323.1
+    },
+    {
+      "time": "14:15",
+      "price": 322.8
+    },
+    {
+      "time": "14:30",
+      "price": 321.85
+    },
+    {
       "time": "14:45",
-      "price": 319.55
+      "price": 322.1
     },
     {
       "time": "15:00",
-      "price": 318.4
+      "price": 322.1
     },
     {
       "time": "15:15",
-      "price": 318.5
+      "price": 322.2
     },
     {
       "time": "15:30",
-      "price": 318.8
+      "price": 322.15
     }
   ],
   "shadows": {
-    "green_shadow": 1.3,
-    "red_shadow": 1.7
+    "green_shadow": 2.15,
+    "red_shadow": 0.0
   },
   "key_levels": {
-    "day_high": 320.1,
-    "day_high_time": "09:15",
-    "day_low": 318.4,
-    "day_low_time": "15:00"
+    "day_high": 324.3,
+    "day_high_time": "10:00",
+    "day_low": 319.15,
+    "day_low_time": "09:15"
   }
 }

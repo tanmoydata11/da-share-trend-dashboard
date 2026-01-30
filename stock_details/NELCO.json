@@ -1,21 +1,21 @@
 {
   "name": "NELCO",
-  "current_price": 666.35,
-  "open": 665.0,
-  "high": 667.9,
-  "low": 660.9,
-  "change": 1.35,
-  "change_pct": 0.2,
-  "date": "29-01-2026",
-  "updated_time": "08:18 PM",
+  "current_price": 654.65,
+  "open": 650.45,
+  "high": 657.5,
+  "low": 649.8,
+  "change": 4.2,
+  "change_pct": 0.65,
+  "date": "30-01-2026",
+  "updated_time": "06:11 PM",
   "ema": {
-    "ema_9": 647.34,
-    "ema_20": null,
+    "ema_9": 648.8,
+    "ema_20": 667.0,
     "ema_200": null
   },
   "trend": {
-    "overall": "Bullish",
-    "signal": "BUY",
+    "overall": "Neutral",
+    "signal": "HOLD",
     "short_term": "Bullish",
     "medium_term": "Bearish",
     "long_term": "N/A"
@@ -23,8 +23,8 @@
   "support_resistance": {
     "resistance": 672.1,
     "support": 584.45,
-    "distance_to_resistance": 5.75,
-    "distance_to_support": 81.9
+    "distance_to_resistance": 17.45,
+    "distance_to_support": 70.2
   },
   "historical": {
     "dates": [
@@ -40,7 +40,6 @@
       "30-01-2026"
     ],
     "prices": [
-      700.35,
       675.0,
       653.25,
       628.0,
@@ -49,123 +48,124 @@
       601.0,
       615.6,
       652.05,
-      666.35
+      666.35,
+      654.65
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 665.0
+      "price": 650.45
     },
     {
       "time": "09:30",
-      "price": 660.9
+      "price": 656.1
     },
     {
       "time": "09:45",
-      "price": 662.0
+      "price": 653.45
     },
     {
       "time": "10:00",
-      "price": 667.9
+      "price": 653.8
     },
     {
       "time": "10:15",
-      "price": 667.9
+      "price": 653.65
     },
     {
       "time": "10:30",
-      "price": 666.1
+      "price": 651.8
     },
     {
       "time": "10:45",
-      "price": 665.6
+      "price": 652.0
     },
     {
       "time": "11:00",
-      "price": 664.6
+      "price": 655.85
     },
     {
       "time": "11:15",
-      "price": 666.0
+      "price": 655.45
     },
     {
       "time": "11:30",
-      "price": 665.75
+      "price": 652.15
     },
     {
       "time": "11:45",
-      "price": 665.0
+      "price": 657.5
     },
     {
       "time": "12:00",
-      "price": 663.6
+      "price": 655.75
     },
     {
       "time": "12:15",
-      "price": 663.3
+      "price": 654.3
     },
     {
       "time": "12:30",
-      "price": 662.45
+      "price": 655.55
     },
     {
       "time": "12:45",
-      "price": 663.65
+      "price": 654.65
     },
     {
       "time": "13:00",
-      "price": 665.7
+      "price": 653.25
     },
     {
       "time": "13:15",
-      "price": 667.0
+      "price": 649.8
     },
     {
       "time": "13:30",
-      "price": 665.0
+      "price": 653.1
     },
     {
       "time": "13:45",
-      "price": 663.0
+      "price": 655.0
     },
     {
       "time": "14:00",
-      "price": 667.0
+      "price": 655.35
     },
     {
       "time": "14:15",
-      "price": 665.9
+      "price": 655.2
     },
     {
       "time": "14:30",
-      "price": 665.8
+      "price": 653.5
     },
     {
       "time": "14:45",
-      "price": 666.05
+      "price": 652.0
     },
     {
       "time": "15:00",
-      "price": 666.15
+      "price": 655.05
     },
     {
       "time": "15:15",
-      "price": 666.6
+      "price": 656.75
     },
     {
       "time": "15:30",
-      "price": 666.35
+      "price": 654.65
     }
   ],
   "shadows": {
-    "green_shadow": 1.55,
-    "red_shadow": 4.1
+    "green_shadow": 2.85,
+    "red_shadow": 0.65
   },
   "key_levels": {
-    "day_high": 667.9,
-    "day_high_time": "10:00",
-    "day_low": 660.9,
-    "day_low_time": "09:30"
+    "day_high": 657.5,
+    "day_high_time": "11:45",
+    "day_low": 649.8,
+    "day_low_time": "13:15"
   }
 }

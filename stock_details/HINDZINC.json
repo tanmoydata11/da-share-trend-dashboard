@@ -1,30 +1,30 @@
 {
   "name": "HINDZINC",
-  "current_price": 716.2,
-  "open": 703.1,
-  "high": 718.85,
-  "low": 703.1,
-  "change": 13.1,
-  "change_pct": 1.86,
-  "date": "29-01-2026",
-  "updated_time": "08:18 PM",
+  "current_price": 625.9,
+  "open": 672.0,
+  "high": 679.9,
+  "low": 624.9,
+  "change": -46.1,
+  "change_pct": -6.86,
+  "date": "30-01-2026",
+  "updated_time": "06:11 PM",
   "ema": {
-    "ema_9": 689.04,
-    "ema_20": null,
+    "ema_9": 676.41,
+    "ema_20": 659.57,
     "ema_200": null
   },
   "trend": {
-    "overall": "Bullish",
-    "signal": "BUY",
-    "short_term": "Bullish",
+    "overall": "Bearish",
+    "signal": "SELL",
+    "short_term": "Bearish",
     "medium_term": "Bearish",
     "long_term": "N/A"
   },
   "support_resistance": {
     "resistance": 728.0,
-    "support": 650.3,
-    "distance_to_resistance": 11.8,
-    "distance_to_support": 65.9
+    "support": 624.9,
+    "distance_to_resistance": 102.1,
+    "distance_to_support": 1.0
   },
   "historical": {
     "dates": [
@@ -40,7 +40,6 @@
       "30-01-2026"
     ],
     "prices": [
-      655.0,
       635.5,
       660.5,
       680.05,
@@ -49,123 +48,124 @@
       697.0,
       726.0,
       704.0,
-      716.2
+      716.2,
+      625.9
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 703.1
+      "price": 672.0
     },
     {
       "time": "09:30",
-      "price": 706.0
+      "price": 679.9
     },
     {
       "time": "09:45",
-      "price": 712.9
+      "price": 679.0
     },
     {
       "time": "10:00",
-      "price": 713.9
+      "price": 671.9
     },
     {
       "time": "10:15",
-      "price": 710.25
+      "price": 666.65
     },
     {
       "time": "10:30",
-      "price": 715.0
+      "price": 660.6
     },
     {
       "time": "10:45",
-      "price": 711.55
+      "price": 665.25
     },
     {
       "time": "11:00",
-      "price": 712.8
+      "price": 664.5
     },
     {
       "time": "11:15",
-      "price": 717.85
+      "price": 665.5
     },
     {
       "time": "11:30",
-      "price": 718.85
+      "price": 662.4
     },
     {
       "time": "11:45",
-      "price": 717.05
+      "price": 659.75
     },
     {
       "time": "12:00",
-      "price": 718.0
+      "price": 656.65
     },
     {
       "time": "12:15",
-      "price": 712.35
+      "price": 652.9
     },
     {
       "time": "12:30",
-      "price": 714.4
+      "price": 652.55
     },
     {
       "time": "12:45",
-      "price": 714.3
+      "price": 651.5
     },
     {
       "time": "13:00",
-      "price": 715.0
+      "price": 644.5
     },
     {
       "time": "13:15",
-      "price": 715.2
+      "price": 646.6
     },
     {
       "time": "13:30",
-      "price": 713.05
+      "price": 649.55
     },
     {
       "time": "13:45",
-      "price": 715.0
+      "price": 653.25
     },
     {
       "time": "14:00",
-      "price": 713.7
+      "price": 646.1
     },
     {
       "time": "14:15",
-      "price": 706.95
+      "price": 639.4
     },
     {
       "time": "14:30",
-      "price": 710.15
+      "price": 636.15
     },
     {
       "time": "14:45",
-      "price": 713.35
+      "price": 632.0
     },
     {
       "time": "15:00",
-      "price": 715.15
+      "price": 633.1
     },
     {
       "time": "15:15",
-      "price": 715.65
+      "price": 624.9
     },
     {
       "time": "15:30",
-      "price": 716.2
+      "price": 625.9
     }
   ],
   "shadows": {
-    "green_shadow": 2.65,
-    "red_shadow": 0.0
+    "green_shadow": 54.0,
+    "red_shadow": 47.1
   },
   "key_levels": {
-    "day_high": 718.85,
-    "day_high_time": "11:30",
-    "day_low": 703.1,
-    "day_low_time": "09:15"
+    "day_high": 679.9,
+    "day_high_time": "09:30",
+    "day_low": 624.9,
+    "day_low_time": "15:15"
   }
 }

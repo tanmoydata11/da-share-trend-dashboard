@@ -1,15 +1,15 @@
 {
   "name": "UNIONBANK",
-  "current_price": 179.44,
-  "open": 182.1,
-  "high": 182.1,
-  "low": 178.44,
-  "change": -2.66,
-  "change_pct": -1.46,
-  "date": "29-01-2026",
-  "updated_time": "08:18 PM",
+  "current_price": 180.22,
+  "open": 176.93,
+  "high": 182.13,
+  "low": 176.93,
+  "change": 3.29,
+  "change_pct": 1.86,
+  "date": "30-01-2026",
+  "updated_time": "06:11 PM",
   "ema": {
-    "ema_9": 175.69,
+    "ema_9": 176.59,
     "ema_20": null,
     "ema_200": null
   },
@@ -23,8 +23,8 @@
   "support_resistance": {
     "resistance": 182.24,
     "support": 171.6,
-    "distance_to_resistance": 2.8,
-    "distance_to_support": 7.84
+    "distance_to_resistance": 2.02,
+    "distance_to_support": 8.62
   },
   "historical": {
     "dates": [
@@ -40,7 +40,6 @@
       "30-01-2026"
     ],
     "prices": [
-      179.2,
       176.1,
       177.88,
       175.65,
@@ -49,123 +48,124 @@
       172.79,
       175.75,
       182.24,
-      179.44
+      179.44,
+      180.22
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 182.1
+      "price": 176.93
     },
     {
       "time": "09:30",
-      "price": 181.5
+      "price": 178.87
     },
     {
       "time": "09:45",
-      "price": 181.38
+      "price": 181.69
     },
     {
       "time": "10:00",
-      "price": 180.06
+      "price": 181.27
     },
     {
       "time": "10:15",
-      "price": 179.65
+      "price": 180.48
     },
     {
       "time": "10:30",
-      "price": 179.49
+      "price": 180.17
     },
     {
       "time": "10:45",
-      "price": 179.23
+      "price": 180.19
     },
     {
       "time": "11:00",
-      "price": 180.2
+      "price": 180.89
     },
     {
       "time": "11:15",
-      "price": 179.87
+      "price": 181.35
     },
     {
       "time": "11:30",
-      "price": 179.78
+      "price": 181.69
     },
     {
       "time": "11:45",
-      "price": 179.48
+      "price": 181.48
     },
     {
       "time": "12:00",
-      "price": 178.49
+      "price": 181.73
     },
     {
       "time": "12:15",
-      "price": 178.76
+      "price": 182.13
     },
     {
       "time": "12:30",
-      "price": 179.0
+      "price": 181.66
     },
     {
       "time": "12:45",
-      "price": 178.92
+      "price": 180.95
     },
     {
       "time": "13:00",
-      "price": 178.77
+      "price": 180.6
     },
     {
       "time": "13:15",
-      "price": 178.44
+      "price": 179.8
     },
     {
       "time": "13:30",
-      "price": 178.9
+      "price": 180.6
     },
     {
       "time": "13:45",
-      "price": 179.04
+      "price": 181.02
     },
     {
       "time": "14:00",
-      "price": 179.01
+      "price": 181.01
     },
     {
       "time": "14:15",
-      "price": 178.59
+      "price": 180.25
     },
     {
       "time": "14:30",
-      "price": 178.88
+      "price": 180.5
     },
     {
       "time": "14:45",
-      "price": 178.95
+      "price": 180.33
     },
     {
       "time": "15:00",
-      "price": 178.92
+      "price": 180.65
     },
     {
       "time": "15:15",
-      "price": 179.74
+      "price": 180.88
     },
     {
       "time": "15:30",
-      "price": 179.44
+      "price": 180.22
     }
   ],
   "shadows": {
-    "green_shadow": 2.66,
-    "red_shadow": 3.66
+    "green_shadow": 1.91,
+    "red_shadow": 0.0
   },
   "key_levels": {
-    "day_high": 182.1,
-    "day_high_time": "09:15",
-    "day_low": 178.44,
-    "day_low_time": "13:15"
+    "day_high": 182.13,
+    "day_high_time": "12:15",
+    "day_low": 176.93,
+    "day_low_time": "09:15"
   }
 }

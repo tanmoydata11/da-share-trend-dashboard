@@ -1,30 +1,30 @@
 {
   "name": "TATASTEEL",
-  "current_price": 202.51,
-  "open": 196.16,
-  "high": 202.51,
-  "low": 196.16,
-  "change": 6.35,
-  "change_pct": 3.24,
-  "date": "29-01-2026",
-  "updated_time": "08:18 PM",
+  "current_price": 192.6,
+  "open": 195.6,
+  "high": 196.1,
+  "low": 191.19,
+  "change": -3.0,
+  "change_pct": -1.53,
+  "date": "30-01-2026",
+  "updated_time": "06:11 PM",
   "ema": {
-    "ema_9": 191.57,
-    "ema_20": null,
+    "ema_9": 191.78,
+    "ema_20": 188.36,
     "ema_200": null
   },
   "trend": {
     "overall": "Bullish",
     "signal": "BUY",
     "short_term": "Bullish",
-    "medium_term": "Bearish",
+    "medium_term": "Bullish",
     "long_term": "N/A"
   },
   "support_resistance": {
     "resistance": 202.51,
     "support": 181.61,
-    "distance_to_resistance": 0.0,
-    "distance_to_support": 20.9
+    "distance_to_resistance": 9.91,
+    "distance_to_support": 10.99
   },
   "historical": {
     "dates": [
@@ -40,7 +40,6 @@
       "30-01-2026"
     ],
     "prices": [
-      189.37,
       188.0,
       188.27,
       183.8,
@@ -49,123 +48,124 @@
       187.88,
       193.1,
       193.8,
-      202.51
+      202.51,
+      192.6
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 196.16
+      "price": 195.6
     },
     {
       "time": "09:30",
-      "price": 197.01
+      "price": 196.1
     },
     {
       "time": "09:45",
-      "price": 197.12
+      "price": 195.93
     },
     {
       "time": "10:00",
-      "price": 197.37
+      "price": 194.25
     },
     {
       "time": "10:15",
-      "price": 196.98
+      "price": 193.81
     },
     {
       "time": "10:30",
-      "price": 197.7
+      "price": 192.86
     },
     {
       "time": "10:45",
-      "price": 197.27
+      "price": 193.27
     },
     {
       "time": "11:00",
-      "price": 197.29
+      "price": 193.84
     },
     {
       "time": "11:15",
-      "price": 198.57
+      "price": 192.76
     },
     {
       "time": "11:30",
-      "price": 198.25
+      "price": 192.88
     },
     {
       "time": "11:45",
-      "price": 198.8
+      "price": 192.66
     },
     {
       "time": "12:00",
-      "price": 198.51
+      "price": 191.58
     },
     {
       "time": "12:15",
-      "price": 197.85
+      "price": 191.55
     },
     {
       "time": "12:30",
-      "price": 197.68
+      "price": 191.59
     },
     {
       "time": "12:45",
-      "price": 198.13
+      "price": 191.19
     },
     {
       "time": "13:00",
-      "price": 198.5
+      "price": 191.19
     },
     {
       "time": "13:15",
-      "price": 198.28
+      "price": 191.98
     },
     {
       "time": "13:30",
-      "price": 199.15
+      "price": 192.66
     },
     {
       "time": "13:45",
-      "price": 200.25
+      "price": 193.12
     },
     {
       "time": "14:00",
-      "price": 201.0
+      "price": 193.31
     },
     {
       "time": "14:15",
-      "price": 201.2
+      "price": 193.18
     },
     {
       "time": "14:30",
-      "price": 201.47
+      "price": 193.44
     },
     {
       "time": "14:45",
-      "price": 201.37
+      "price": 193.02
     },
     {
       "time": "15:00",
-      "price": 202.01
+      "price": 193.42
     },
     {
       "time": "15:15",
-      "price": 202.4
+      "price": 193.11
     },
     {
       "time": "15:30",
-      "price": 202.51
+      "price": 192.6
     }
   ],
   "shadows": {
-    "green_shadow": 0.0,
-    "red_shadow": 0.0
+    "green_shadow": 3.5,
+    "red_shadow": 4.41
   },
   "key_levels": {
-    "day_high": 202.51,
-    "day_high_time": "15:30",
-    "day_low": 196.16,
-    "day_low_time": "09:15"
+    "day_high": 196.1,
+    "day_high_time": "09:30",
+    "day_low": 191.19,
+    "day_low_time": "12:45"
   }
 }
