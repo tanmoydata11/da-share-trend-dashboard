@@ -1,17 +1,17 @@
 {
-  "name": "OIL",
-  "current_price": 510.0,
-  "open": 485.7,
-  "high": 523.8,
-  "low": 407.4,
-  "change": 24.3,
-  "change_pct": 5.0,
+  "name": "TATAPOWER",
+  "current_price": 366.45,
+  "open": 358.8,
+  "high": 385.3,
+  "low": 343.1,
+  "change": 7.65,
+  "change_pct": 2.13,
   "date": "02-02-2026 to 30-01-2026",
   "updated_time": "04:45 PM",
   "ema": {
-    "ema_9": 508.06,
-    "ema_20": 507.45,
-    "ema_200": 474.87
+    "ema_9": 364.65,
+    "ema_20": 363.86,
+    "ema_200": 357.87
   },
   "trend": {
     "overall": "Bullish",
@@ -21,10 +21,10 @@
     "long_term": "Bullish"
   },
   "support_resistance": {
-    "resistance": 516.15,
-    "support": 427.1,
-    "distance_to_resistance": 6.15,
-    "distance_to_support": 82.9
+    "resistance": 372.2,
+    "support": 343.1,
+    "distance_to_resistance": 5.75,
+    "distance_to_support": 23.35
   },
   "historical": {
     "dates": [
@@ -40,36 +40,36 @@
       "30-01-2026"
     ],
     "prices": [
-      446.0,
-      435.05,
-      428.5,
-      434.75,
-      435.7,
-      435.4,
-      449.0,
-      492.0,
-      514.55,
-      510.0
+      365.95,
+      362.6,
+      352.9,
+      349.35,
+      353.5,
+      345.7,
+      348.6,
+      355.75,
+      366.1,
+      366.45
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 485.7
+      "price": 358.8
     },
     {
       "time": "15:30",
-      "price": 510.0
+      "price": 366.45
     }
   ],
   "shadows": {
-    "green_shadow": 13.8,
-    "red_shadow": 78.3
+    "green_shadow": 18.85,
+    "red_shadow": 15.7
   },
   "key_levels": {
-    "day_high": 523.8,
+    "day_high": 385.3,
     "day_high_time": "15:30",
-    "day_low": 407.4,
+    "day_low": 343.1,
     "day_low_time": "09:15"
   }
 }

@@ -1,30 +1,30 @@
 {
-  "name": "OIL",
-  "current_price": 510.0,
-  "open": 485.7,
-  "high": 523.8,
-  "low": 407.4,
-  "change": 24.3,
-  "change_pct": 5.0,
+  "name": "PATANJALI",
+  "current_price": 502.0,
+  "open": 490.7,
+  "high": 581.25,
+  "low": 480.55,
+  "change": 11.3,
+  "change_pct": 2.3,
   "date": "02-02-2026 to 30-01-2026",
   "updated_time": "04:45 PM",
   "ema": {
-    "ema_9": 508.06,
-    "ema_20": 507.45,
-    "ema_200": 474.87
+    "ema_9": 499.22,
+    "ema_20": 498.85,
+    "ema_200": 505.53
   },
   "trend": {
     "overall": "Bullish",
     "signal": "BUY",
     "short_term": "Bullish",
     "medium_term": "Bullish",
-    "long_term": "Bullish"
+    "long_term": "Bearish"
   },
   "support_resistance": {
-    "resistance": 516.15,
-    "support": 427.1,
-    "distance_to_resistance": 6.15,
-    "distance_to_support": 82.9
+    "resistance": 544.3,
+    "support": 493.35,
+    "distance_to_resistance": 42.3,
+    "distance_to_support": 8.65
   },
   "historical": {
     "dates": [
@@ -40,36 +40,36 @@
       "30-01-2026"
     ],
     "prices": [
-      446.0,
-      435.05,
-      428.5,
-      434.75,
-      435.7,
-      435.4,
-      449.0,
-      492.0,
-      514.55,
-      510.0
+      520.7,
+      526.0,
+      502.0,
+      505.0,
+      509.85,
+      505.0,
+      503.1,
+      505.5,
+      499.5,
+      502.0
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 485.7
+      "price": 490.7
     },
     {
       "time": "15:30",
-      "price": 510.0
+      "price": 502.0
     }
   ],
   "shadows": {
-    "green_shadow": 13.8,
-    "red_shadow": 78.3
+    "green_shadow": 79.25,
+    "red_shadow": 10.15
   },
   "key_levels": {
-    "day_high": 523.8,
+    "day_high": 581.25,
     "day_high_time": "15:30",
-    "day_low": 407.4,
+    "day_low": 480.55,
     "day_low_time": "09:15"
   }
 }

@@ -1,17 +1,17 @@
 {
-  "name": "OIL",
-  "current_price": 510.0,
-  "open": 485.7,
-  "high": 523.8,
-  "low": 407.4,
-  "change": 24.3,
-  "change_pct": 5.0,
+  "name": "KEC",
+  "current_price": 669.35,
+  "open": 623.7,
+  "high": 726.25,
+  "low": 605.05,
+  "change": 45.65,
+  "change_pct": 7.32,
   "date": "02-02-2026 to 30-01-2026",
   "updated_time": "04:45 PM",
   "ema": {
-    "ema_9": 508.06,
-    "ema_20": 507.45,
-    "ema_200": 474.87
+    "ema_9": 666.05,
+    "ema_20": 663.5,
+    "ema_200": 654.73
   },
   "trend": {
     "overall": "Bullish",
@@ -21,10 +21,10 @@
     "long_term": "Bullish"
   },
   "support_resistance": {
-    "resistance": 516.15,
-    "support": 427.1,
-    "distance_to_resistance": 6.15,
-    "distance_to_support": 82.9
+    "resistance": 702.0,
+    "support": 620.5,
+    "distance_to_resistance": 32.65,
+    "distance_to_support": 48.85
   },
   "historical": {
     "dates": [
@@ -40,36 +40,36 @@
       "30-01-2026"
     ],
     "prices": [
-      446.0,
-      435.05,
-      428.5,
-      434.75,
-      435.7,
-      435.4,
-      449.0,
-      492.0,
-      514.55,
-      510.0
+      681.3,
+      689.75,
+      663.0,
+      655.0,
+      657.6,
+      633.2,
+      632.0,
+      663.45,
+      646.3,
+      669.35
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 485.7
+      "price": 623.7
     },
     {
       "time": "15:30",
-      "price": 510.0
+      "price": 669.35
     }
   ],
   "shadows": {
-    "green_shadow": 13.8,
-    "red_shadow": 78.3
+    "green_shadow": 56.9,
+    "red_shadow": 18.65
   },
   "key_levels": {
-    "day_high": 523.8,
+    "day_high": 726.25,
     "day_high_time": "15:30",
-    "day_low": 407.4,
+    "day_low": 605.05,
     "day_low_time": "09:15"
   }
 }

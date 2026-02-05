@@ -1,30 +1,30 @@
 {
-  "name": "HINDCOPPER",
-  "current_price": 675.1,
-  "open": 631.95,
-  "high": 760.05,
-  "low": 517.75,
-  "change": 43.15,
-  "change_pct": 6.83,
+  "name": "SBICARD",
+  "current_price": 753.55,
+  "open": 731.65,
+  "high": 896.35,
+  "low": 727.1,
+  "change": 21.9,
+  "change_pct": 2.99,
   "date": "02-02-2026 to 30-01-2026",
   "updated_time": "04:45 PM",
   "ema": {
-    "ema_9": 685.05,
-    "ema_20": 694.15,
-    "ema_200": 626.97
+    "ema_9": 755.9,
+    "ema_20": 757.65,
+    "ema_200": 782.06
   },
   "trend": {
     "overall": "Bearish",
     "signal": "SELL",
     "short_term": "Bearish",
     "medium_term": "Bearish",
-    "long_term": "Bullish"
+    "long_term": "Bearish"
   },
   "support_resistance": {
-    "resistance": 760.05,
-    "support": 525.8,
-    "distance_to_resistance": 84.95,
-    "distance_to_support": 149.3
+    "resistance": 851.05,
+    "support": 751.3,
+    "distance_to_resistance": 97.5,
+    "distance_to_support": 2.25
   },
   "historical": {
     "dates": [
@@ -40,36 +40,36 @@
       "30-01-2026"
     ],
     "prices": [
-      561.55,
-      548.75,
-      532.45,
-      557.5,
-      531.5,
-      539.0,
-      563.9,
-      636.6,
-      760.05,
-      675.1
+      839.0,
+      838.3,
+      809.75,
+      782.65,
+      788.8,
+      771.0,
+      770.25,
+      784.0,
+      768.0,
+      753.55
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 631.95
+      "price": 731.65
     },
     {
       "time": "15:30",
-      "price": 675.1
+      "price": 753.55
     }
   ],
   "shadows": {
-    "green_shadow": 84.95,
-    "red_shadow": 114.2
+    "green_shadow": 142.8,
+    "red_shadow": 4.55
   },
   "key_levels": {
-    "day_high": 760.05,
+    "day_high": 896.35,
     "day_high_time": "15:30",
-    "day_low": 517.75,
+    "day_low": 727.1,
     "day_low_time": "09:15"
   }
 }

@@ -1,30 +1,30 @@
 {
-  "name": "HINDCOPPER",
-  "current_price": 675.1,
-  "open": 631.95,
-  "high": 760.05,
-  "low": 517.75,
-  "change": 43.15,
-  "change_pct": 6.83,
+  "name": "CHOLAFIN",
+  "current_price": 1628.8,
+  "open": 1546.3,
+  "high": 1792.2,
+  "low": 1535.7,
+  "change": 82.5,
+  "change_pct": 5.34,
   "date": "02-02-2026 to 30-01-2026",
   "updated_time": "04:45 PM",
   "ema": {
-    "ema_9": 685.05,
-    "ema_20": 694.15,
-    "ema_200": 626.97
+    "ema_9": 1630.81,
+    "ema_20": 1635.22,
+    "ema_200": 1649.28
   },
   "trend": {
     "overall": "Bearish",
     "signal": "SELL",
     "short_term": "Bearish",
     "medium_term": "Bearish",
-    "long_term": "Bullish"
+    "long_term": "Bearish"
   },
   "support_resistance": {
-    "resistance": 760.05,
-    "support": 525.8,
-    "distance_to_resistance": 84.95,
-    "distance_to_support": 149.3
+    "resistance": 1719.7,
+    "support": 1614.3,
+    "distance_to_resistance": 90.9,
+    "distance_to_support": 14.5
   },
   "historical": {
     "dates": [
@@ -40,36 +40,36 @@
       "30-01-2026"
     ],
     "prices": [
-      561.55,
-      548.75,
-      532.45,
-      557.5,
-      531.5,
-      539.0,
-      563.9,
-      636.6,
-      760.05,
-      675.1
+      1700.5,
+      1700.4,
+      1651.0,
+      1627.8,
+      1660.0,
+      1648.7,
+      1639.7,
+      1636.8,
+      1648.9,
+      1628.8
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 631.95
+      "price": 1546.3
     },
     {
       "time": "15:30",
-      "price": 675.1
+      "price": 1628.8
     }
   ],
   "shadows": {
-    "green_shadow": 84.95,
-    "red_shadow": 114.2
+    "green_shadow": 163.4,
+    "red_shadow": 10.6
   },
   "key_levels": {
-    "day_high": 760.05,
+    "day_high": 1792.2,
     "day_high_time": "15:30",
-    "day_low": 517.75,
+    "day_low": 1535.7,
     "day_low_time": "09:15"
   }
 }

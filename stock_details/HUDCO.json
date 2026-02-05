@@ -1,30 +1,30 @@
 {
-  "name": "HINDCOPPER",
-  "current_price": 675.1,
-  "open": 631.95,
-  "high": 760.05,
-  "low": 517.75,
-  "change": 43.15,
-  "change_pct": 6.83,
+  "name": "HUDCO",
+  "current_price": 191.45,
+  "open": 188.22,
+  "high": 228.27,
+  "low": 178.2,
+  "change": 3.23,
+  "change_pct": 1.72,
   "date": "02-02-2026 to 30-01-2026",
   "updated_time": "04:45 PM",
   "ema": {
-    "ema_9": 685.05,
-    "ema_20": 694.15,
-    "ema_200": 626.97
+    "ema_9": 191.66,
+    "ema_20": 192.75,
+    "ema_200": 201.32
   },
   "trend": {
     "overall": "Bearish",
     "signal": "SELL",
     "short_term": "Bearish",
     "medium_term": "Bearish",
-    "long_term": "Bullish"
+    "long_term": "Bearish"
   },
   "support_resistance": {
-    "resistance": 760.05,
-    "support": 525.8,
-    "distance_to_resistance": 84.95,
-    "distance_to_support": 149.3
+    "resistance": 218.9,
+    "support": 189.47,
+    "distance_to_resistance": 27.45,
+    "distance_to_support": 1.98
   },
   "historical": {
     "dates": [
@@ -40,36 +40,36 @@
       "30-01-2026"
     ],
     "prices": [
-      561.55,
-      548.75,
-      532.45,
-      557.5,
-      531.5,
-      539.0,
-      563.9,
-      636.6,
-      760.05,
-      675.1
+      214.8,
+      212.7,
+      205.8,
+      204.12,
+      208.0,
+      195.1,
+      199.94,
+      204.44,
+      203.9,
+      191.45
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 631.95
+      "price": 188.22
     },
     {
       "time": "15:30",
-      "price": 675.1
+      "price": 191.45
     }
   ],
   "shadows": {
-    "green_shadow": 84.95,
-    "red_shadow": 114.2
+    "green_shadow": 36.82,
+    "red_shadow": 10.02
   },
   "key_levels": {
-    "day_high": 760.05,
+    "day_high": 228.27,
     "day_high_time": "15:30",
-    "day_low": 517.75,
+    "day_low": 178.2,
     "day_low_time": "09:15"
   }
 }

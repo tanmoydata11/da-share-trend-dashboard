@@ -1,17 +1,17 @@
 {
-  "name": "OIL",
-  "current_price": 510.0,
-  "open": 485.7,
-  "high": 523.8,
-  "low": 407.4,
-  "change": 24.3,
-  "change_pct": 5.0,
+  "name": "NESTLEIND",
+  "current_price": 1332.4,
+  "open": 1308.3,
+  "high": 1334.7,
+  "low": 1264.0,
+  "change": 24.1,
+  "change_pct": 1.84,
   "date": "02-02-2026 to 30-01-2026",
   "updated_time": "04:45 PM",
   "ema": {
-    "ema_9": 508.06,
-    "ema_20": 507.45,
-    "ema_200": 474.87
+    "ema_9": 1326.29,
+    "ema_20": 1317.44,
+    "ema_200": 1298.17
   },
   "trend": {
     "overall": "Bullish",
@@ -21,10 +21,10 @@
     "long_term": "Bullish"
   },
   "support_resistance": {
-    "resistance": 516.15,
-    "support": 427.1,
-    "distance_to_resistance": 6.15,
-    "distance_to_support": 82.9
+    "resistance": 1334.7,
+    "support": 1264.0,
+    "distance_to_resistance": 2.3,
+    "distance_to_support": 68.4
   },
   "historical": {
     "dates": [
@@ -40,36 +40,36 @@
       "30-01-2026"
     ],
     "prices": [
-      446.0,
-      435.05,
-      428.5,
-      434.75,
-      435.7,
-      435.4,
-      449.0,
-      492.0,
-      514.55,
-      510.0
+      1315.1,
+      1315.6,
+      1295.7,
+      1280.7,
+      1309.0,
+      1295.4,
+      1303.3,
+      1295.4,
+      1287.9,
+      1332.4
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 485.7
+      "price": 1308.3
     },
     {
       "time": "15:30",
-      "price": 510.0
+      "price": 1332.4
     }
   ],
   "shadows": {
-    "green_shadow": 13.8,
-    "red_shadow": 78.3
+    "green_shadow": 2.3,
+    "red_shadow": 44.3
   },
   "key_levels": {
-    "day_high": 523.8,
+    "day_high": 1334.7,
     "day_high_time": "15:30",
-    "day_low": 407.4,
+    "day_low": 1264.0,
     "day_low_time": "09:15"
   }
 }

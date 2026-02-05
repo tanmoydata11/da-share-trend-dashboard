@@ -1,30 +1,30 @@
 {
-  "name": "HINDCOPPER",
-  "current_price": 675.1,
-  "open": 631.95,
-  "high": 760.05,
-  "low": 517.75,
-  "change": 43.15,
-  "change_pct": 6.83,
+  "name": "GODREJCP",
+  "current_price": 1154.1,
+  "open": 1148.3,
+  "high": 1257.4,
+  "low": 1135.4,
+  "change": 5.8,
+  "change_pct": 0.51,
   "date": "02-02-2026 to 30-01-2026",
   "updated_time": "04:45 PM",
   "ema": {
-    "ema_9": 685.05,
-    "ema_20": 694.15,
-    "ema_200": 626.97
+    "ema_9": 1155.51,
+    "ema_20": 1155.54,
+    "ema_200": 1185.29
   },
   "trend": {
     "overall": "Bearish",
     "signal": "SELL",
     "short_term": "Bearish",
     "medium_term": "Bearish",
-    "long_term": "Bullish"
+    "long_term": "Bearish"
   },
   "support_resistance": {
-    "resistance": 760.05,
-    "support": 525.8,
-    "distance_to_resistance": 84.95,
-    "distance_to_support": 149.3
+    "resistance": 1251.4,
+    "support": 1144.8,
+    "distance_to_resistance": 97.3,
+    "distance_to_support": 9.3
   },
   "historical": {
     "dates": [
@@ -40,36 +40,36 @@
       "30-01-2026"
     ],
     "prices": [
-      561.55,
-      548.75,
-      532.45,
-      557.5,
-      531.5,
-      539.0,
-      563.9,
-      636.6,
-      760.05,
-      675.1
+      1238.7,
+      1229.5,
+      1229.3,
+      1222.5,
+      1247.8,
+      1242.7,
+      1178.0,
+      1171.0,
+      1155.1,
+      1154.1
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 631.95
+      "price": 1148.3
     },
     {
       "time": "15:30",
-      "price": 675.1
+      "price": 1154.1
     }
   ],
   "shadows": {
-    "green_shadow": 84.95,
-    "red_shadow": 114.2
+    "green_shadow": 103.3,
+    "red_shadow": 12.9
   },
   "key_levels": {
-    "day_high": 760.05,
+    "day_high": 1257.4,
     "day_high_time": "15:30",
-    "day_low": 517.75,
+    "day_low": 1135.4,
     "day_low_time": "09:15"
   }
 }

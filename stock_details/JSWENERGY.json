@@ -1,30 +1,30 @@
 {
-  "name": "OIL",
-  "current_price": 510.0,
-  "open": 485.7,
-  "high": 523.8,
-  "low": 407.4,
-  "change": 24.3,
-  "change_pct": 5.0,
+  "name": "JSWENERGY",
+  "current_price": 459.8,
+  "open": 445.15,
+  "high": 516.0,
+  "low": 429.05,
+  "change": 14.65,
+  "change_pct": 3.29,
   "date": "02-02-2026 to 30-01-2026",
   "updated_time": "04:45 PM",
   "ema": {
-    "ema_9": 508.06,
-    "ema_20": 507.45,
-    "ema_200": 474.87
+    "ema_9": 458.39,
+    "ema_20": 457.19,
+    "ema_200": 463.01
   },
   "trend": {
     "overall": "Bullish",
     "signal": "BUY",
     "short_term": "Bullish",
     "medium_term": "Bullish",
-    "long_term": "Bullish"
+    "long_term": "Bearish"
   },
   "support_resistance": {
-    "resistance": 516.15,
-    "support": 427.1,
-    "distance_to_resistance": 6.15,
-    "distance_to_support": 82.9
+    "resistance": 499.0,
+    "support": 429.05,
+    "distance_to_resistance": 39.2,
+    "distance_to_support": 30.75
   },
   "historical": {
     "dates": [
@@ -40,36 +40,36 @@
       "30-01-2026"
     ],
     "prices": [
-      446.0,
-      435.05,
-      428.5,
-      434.75,
-      435.7,
-      435.4,
-      449.0,
-      492.0,
-      514.55,
-      510.0
+      492.8,
+      485.25,
+      479.6,
+      478.8,
+      491.0,
+      482.2,
+      441.5,
+      447.0,
+      456.5,
+      459.8
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 485.7
+      "price": 445.15
     },
     {
       "time": "15:30",
-      "price": 510.0
+      "price": 459.8
     }
   ],
   "shadows": {
-    "green_shadow": 13.8,
-    "red_shadow": 78.3
+    "green_shadow": 56.2,
+    "red_shadow": 16.1
   },
   "key_levels": {
-    "day_high": 523.8,
+    "day_high": 516.0,
     "day_high_time": "15:30",
-    "day_low": 407.4,
+    "day_low": 429.05,
     "day_low_time": "09:15"
   }
 }

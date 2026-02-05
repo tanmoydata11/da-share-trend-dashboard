@@ -1,17 +1,17 @@
 {
-  "name": "OIL",
-  "current_price": 510.0,
-  "open": 485.7,
-  "high": 523.8,
-  "low": 407.4,
-  "change": 24.3,
-  "change_pct": 5.0,
+  "name": "NTPC",
+  "current_price": 356.0,
+  "open": 341.7,
+  "high": 368.9,
+  "low": 334.55,
+  "change": 14.3,
+  "change_pct": 4.18,
   "date": "02-02-2026 to 30-01-2026",
   "updated_time": "04:45 PM",
   "ema": {
-    "ema_9": 508.06,
-    "ema_20": 507.45,
-    "ema_200": 474.87
+    "ema_9": 354.98,
+    "ema_20": 354.76,
+    "ema_200": 348.55
   },
   "trend": {
     "overall": "Bullish",
@@ -21,10 +21,10 @@
     "long_term": "Bullish"
   },
   "support_resistance": {
-    "resistance": 516.15,
-    "support": 427.1,
-    "distance_to_resistance": 6.15,
-    "distance_to_support": 82.9
+    "resistance": 360.0,
+    "support": 336.5,
+    "distance_to_resistance": 4.0,
+    "distance_to_support": 19.5
   },
   "historical": {
     "dates": [
@@ -40,36 +40,36 @@
       "30-01-2026"
     ],
     "prices": [
-      446.0,
-      435.05,
-      428.5,
-      434.75,
-      435.7,
-      435.4,
-      449.0,
-      492.0,
-      514.55,
-      510.0
+      346.5,
+      343.35,
+      339.0,
+      339.2,
+      342.5,
+      336.75,
+      344.7,
+      349.0,
+      358.0,
+      356.0
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 485.7
+      "price": 341.7
     },
     {
       "time": "15:30",
-      "price": 510.0
+      "price": 356.0
     }
   ],
   "shadows": {
-    "green_shadow": 13.8,
-    "red_shadow": 78.3
+    "green_shadow": 12.9,
+    "red_shadow": 7.15
   },
   "key_levels": {
-    "day_high": 523.8,
+    "day_high": 368.9,
     "day_high_time": "15:30",
-    "day_low": 407.4,
+    "day_low": 334.55,
     "day_low_time": "09:15"
   }
 }

@@ -1,0 +1,47 @@
+STOCK LIST
+============================================================
+
+Total: 40 stocks
+
+Symbol               Sector                   
+------------------------------------------------------------
+RELIANCE.NS          Energy                   
+INFY.NS              IT                       
+HDFCBANK.NS          Banking                  
+AXISBANK.NS          Banking                  
+SBIN.NS              Banking                  
+KOTAKBANK.NS         Banking                  
+BAJFINANCE.NS        Financial Services       
+NELCO.NS             Electronics              
+HINDCOPPER.NS        Metals                   
+HINDZINC.NS          Metals                   
+ASHOKLEY.NS          Automobile               
+RBLBANK.NS           Banking                  
+APOLLOTYRE.NS        Automobile               
+OIL.NS               Energy                   
+HCLTECH.NS           IT                       
+TATASTEEL.NS         Metals                   
+FEDERALBNK.NS        Banking                  
+UNIONBANK.NS         Banking                  
+CANBK.NS             Banking                  
+YESBANK.NS           Banking                  
+BANDHANBNK.NS        Banking                  
+INDUSINDBK.NS        Banking                  
+PNB.NS               Banking                  
+VEDL.NS              Energy                   
+IDEA.NS              Telecom                  
+TATACONSUM.NS        Consumer Goods           
+TCS.NS               IT                       
+HCLTECH.NS           IT                       
+WIPRO.NS             IT                       
+RVNL.NS              Infrastructure           
+ITC.NS               FMCG                     
+IDFCFIRSTB.NS        Banking                  
+NTPC.NS              Energy                   
+ADANIPOWER.NS        Energy                   
+CESC.NS              Energy                   
+TATAPOWER.NS         Energy                   
+JSWENERGY.NS         Energy                   
+SBICARD.NS           Financial Services       
+CHOLAFIN.NS          Financial Services       
+HUDCO.NS             Financial Services       

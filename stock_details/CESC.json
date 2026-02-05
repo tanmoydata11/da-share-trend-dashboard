@@ -1,17 +1,17 @@
 {
-  "name": "OIL",
-  "current_price": 510.0,
-  "open": 485.7,
-  "high": 523.8,
-  "low": 407.4,
-  "change": 24.3,
-  "change_pct": 5.0,
+  "name": "CESC",
+  "current_price": 149.8,
+  "open": 144.91,
+  "high": 171.48,
+  "low": 138.72,
+  "change": 4.89,
+  "change_pct": 3.37,
   "date": "02-02-2026 to 30-01-2026",
   "updated_time": "04:45 PM",
   "ema": {
-    "ema_9": 508.06,
-    "ema_20": 507.45,
-    "ema_200": 474.87
+    "ema_9": 149.09,
+    "ema_20": 148.13,
+    "ema_200": 146.52
   },
   "trend": {
     "overall": "Bullish",
@@ -21,10 +21,10 @@
     "long_term": "Bullish"
   },
   "support_resistance": {
-    "resistance": 516.15,
-    "support": 427.1,
-    "distance_to_resistance": 6.15,
-    "distance_to_support": 82.9
+    "resistance": 157.68,
+    "support": 138.72,
+    "distance_to_resistance": 7.88,
+    "distance_to_support": 11.08
   },
   "historical": {
     "dates": [
@@ -40,36 +40,36 @@
       "30-01-2026"
     ],
     "prices": [
-      446.0,
-      435.05,
-      428.5,
-      434.75,
-      435.7,
-      435.4,
-      449.0,
-      492.0,
-      514.55,
-      510.0
+      155.15,
+      152.0,
+      147.0,
+      145.7,
+      143.29,
+      140.1,
+      141.54,
+      143.78,
+      145.4,
+      149.8
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 485.7
+      "price": 144.91
     },
     {
       "time": "15:30",
-      "price": 510.0
+      "price": 149.8
     }
   ],
   "shadows": {
-    "green_shadow": 13.8,
-    "red_shadow": 78.3
+    "green_shadow": 21.68,
+    "red_shadow": 6.19
   },
   "key_levels": {
-    "day_high": 523.8,
+    "day_high": 171.48,
     "day_high_time": "15:30",
-    "day_low": 407.4,
+    "day_low": 138.72,
     "day_low_time": "09:15"
   }
 }

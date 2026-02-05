@@ -127,6 +127,70 @@
     {
       "symbol": "IDFCFIRSTB.NS",
       "sector": "Banking"
+    },
+    {
+      "symbol": "NTPC.NS",
+      "sector": "Energy"
+    },
+    {
+      "symbol": "ADANIPOWER.NS",
+      "sector": "Energy"
+    },
+    {
+      "symbol": "CESC.NS",
+      "sector": "Energy"
+    },
+    {
+      "symbol": "TATAPOWER.NS",
+      "sector": "Energy"
+    },
+    {
+      "symbol": "JSWENERGY.NS",
+      "sector": "Energy"
+    },
+    {
+      "symbol": "SBICARD.NS",
+      "sector": "Financial Services"
+    },
+    {
+      "symbol": "CHOLAFIN.NS",
+      "sector": "Financial Services"
+    },
+    {
+      "symbol": "HUDCO.NS",
+      "sector": "Financial Services"
+    },
+    {
+      "symbol": "GODREJCP.NS",
+      "sector": "Consumer Goods"
+    },
+    {
+      "symbol": "PATANJALI.NS",
+      "sector": "Consumer Goods"
+    },
+    {
+      "symbol": "DABUR.NS",
+      "sector": "Consumer Goods"
+    },
+    {
+      "symbol": "NESTLEIND.NS",
+      "sector": "Consumer Goods"
+    },
+    {
+      "symbol": "LT.NS",
+      "sector": "Infrastructure"
+    },
+    {
+      "symbol": "NBCC.NS",
+      "sector": "Infrastructure"
+    },
+    {
+      "symbol": "KEC.NS",
+      "sector": "Infrastructure"
+    },
+    {
+      "symbol": "PNCINFRA.NS",
+      "sector": "Infrastructure"
     }
   ]
 }
