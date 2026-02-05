@@ -7,17 +7,17 @@
   "change": 7.4,
   "change_pct": 0.44,
   "date": "30-01-2026",
-  "updated_time": "06:11 PM",
+  "updated_time": "11:11 AM",
   "ema": {
-    "ema_9": 1701.33,
-    "ema_20": 1682.76,
+    "ema_9": 1701.97,
+    "ema_20": null,
     "ema_200": null
   },
   "trend": {
-    "overall": "Neutral",
-    "signal": "HOLD",
+    "overall": "Bearish",
+    "signal": "SELL",
     "short_term": "Bearish",
-    "medium_term": "Bullish",
+    "medium_term": "Bearish",
     "long_term": "N/A"
   },
   "support_resistance": {

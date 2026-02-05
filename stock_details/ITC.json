@@ -7,10 +7,10 @@
   "change": 3.0,
   "change_pct": 0.94,
   "date": "30-01-2026",
-  "updated_time": "06:11 PM",
+  "updated_time": "11:11 AM",
   "ema": {
-    "ema_9": 324.59,
-    "ema_20": 333.12,
+    "ema_9": 324.2,
+    "ema_20": null,
     "ema_200": null
   },
   "trend": {
