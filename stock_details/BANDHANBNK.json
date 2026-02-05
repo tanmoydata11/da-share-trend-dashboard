@@ -1,30 +1,30 @@
 {
-  "name": "ITC",
-  "current_price": 322.15,
-  "open": 305.15,
-  "high": 344.2,
-  "low": 302.55,
-  "change": 17.0,
-  "change_pct": 5.57,
+  "name": "BANDHANBNK",
+  "current_price": 154.65,
+  "open": 148.56,
+  "high": 157.96,
+  "low": 137.56,
+  "change": 6.09,
+  "change_pct": 4.1,
   "date": "02-02-2026 to 30-01-2026",
   "updated_time": "01:24 PM",
   "ema": {
-    "ema_9": 322.04,
-    "ema_20": 321.62,
-    "ema_200": 323.24
+    "ema_9": 154.66,
+    "ema_20": 154.42,
+    "ema_200": 149.49
   },
   "trend": {
     "overall": "Bullish",
     "signal": "BUY",
-    "short_term": "Bullish",
+    "short_term": "Bearish",
     "medium_term": "Bullish",
-    "long_term": "Bearish"
+    "long_term": "Bullish"
   },
   "support_resistance": {
-    "resistance": 335.15,
-    "support": 318.4,
-    "distance_to_resistance": 13.0,
-    "distance_to_support": 3.75
+    "resistance": 155.15,
+    "support": 137.56,
+    "distance_to_resistance": 0.5,
+    "distance_to_support": 17.09
   },
   "historical": {
     "dates": [
@@ -40,36 +40,36 @@
       "30-01-2026"
     ],
     "prices": [
-      328.95,
-      333.0,
-      326.2,
-      325.0,
-      325.6,
-      323.2,
-      319.8,
-      321.4,
-      318.8,
-      322.15
+      144.65,
+      142.64,
+      139.4,
+      137.95,
+      142.46,
+      148.6,
+      149.11,
+      153.1,
+      151.94,
+      154.65
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 305.15
+      "price": 148.56
     },
     {
       "time": "15:30",
-      "price": 322.15
+      "price": 154.65
     }
   ],
   "shadows": {
-    "green_shadow": 22.05,
-    "red_shadow": 2.6
+    "green_shadow": 3.31,
+    "red_shadow": 11.0
   },
   "key_levels": {
-    "day_high": 344.2,
+    "day_high": 157.96,
     "day_high_time": "15:30",
-    "day_low": 302.55,
+    "day_low": 137.56,
     "day_low_time": "09:15"
   }
 }

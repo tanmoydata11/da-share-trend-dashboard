@@ -299,4 +299,4 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == '--today':
         update_today_fixed()
     else:
-        populate_fixed('01-01-2026', max_workers=5)
+        populate_fixed('01-01-2026', '31-12-2026', max_workers=5)  # CHANGED: Full year

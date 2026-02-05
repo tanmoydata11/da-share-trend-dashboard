@@ -1,17 +1,17 @@
 {
-  "name": "ITC",
-  "current_price": 322.15,
-  "open": 305.15,
-  "high": 344.2,
-  "low": 302.55,
-  "change": 17.0,
-  "change_pct": 5.57,
+  "name": "YESBANK",
+  "current_price": 21.41,
+  "open": 21.32,
+  "high": 23.64,
+  "low": 20.71,
+  "change": 0.09,
+  "change_pct": 0.42,
   "date": "02-02-2026 to 30-01-2026",
   "updated_time": "01:24 PM",
   "ema": {
-    "ema_9": 322.04,
-    "ema_20": 321.62,
-    "ema_200": 323.24
+    "ema_9": 21.37,
+    "ema_20": 21.34,
+    "ema_200": 21.52
   },
   "trend": {
     "overall": "Bullish",
@@ -21,10 +21,10 @@
     "long_term": "Bearish"
   },
   "support_resistance": {
-    "resistance": 335.15,
-    "support": 318.4,
-    "distance_to_resistance": 13.0,
-    "distance_to_support": 3.75
+    "resistance": 23.64,
+    "support": 20.71,
+    "distance_to_resistance": 2.23,
+    "distance_to_support": 0.7
   },
   "historical": {
     "dates": [
@@ -40,36 +40,36 @@
       "30-01-2026"
     ],
     "prices": [
-      328.95,
-      333.0,
-      326.2,
-      325.0,
-      325.6,
-      323.2,
-      319.8,
-      321.4,
-      318.8,
-      322.15
+      23.45,
+      22.73,
+      21.7,
+      21.65,
+      21.69,
+      20.91,
+      21.18,
+      21.5,
+      21.29,
+      21.41
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 305.15
+      "price": 21.32
     },
     {
       "time": "15:30",
-      "price": 322.15
+      "price": 21.41
     }
   ],
   "shadows": {
-    "green_shadow": 22.05,
-    "red_shadow": 2.6
+    "green_shadow": 2.23,
+    "red_shadow": 0.61
   },
   "key_levels": {
-    "day_high": 344.2,
+    "day_high": 23.64,
     "day_high_time": "15:30",
-    "day_low": 302.55,
+    "day_low": 20.71,
     "day_low_time": "09:15"
   }
 }

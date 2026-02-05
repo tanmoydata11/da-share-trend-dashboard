@@ -1,39 +1,39 @@
 {
   "name": "FEDERALBNK",
   "current_price": 287.0,
-  "open": 285.65,
-  "high": 288.6,
-  "low": 285.65,
-  "change": 1.35,
-  "change_pct": 0.47,
-  "date": "30-01-2026",
-  "updated_time": "11:11 AM",
+  "open": 283.8,
+  "high": 289.0,
+  "low": 242.8,
+  "change": 3.2,
+  "change_pct": 1.13,
+  "date": "02-02-2026 to 30-01-2026",
+  "updated_time": "01:24 PM",
   "ema": {
-    "ema_9": 280.16,
-    "ema_20": null,
-    "ema_200": null
+    "ema_9": 287.43,
+    "ema_20": 287.28,
+    "ema_200": 281.4
   },
   "trend": {
-    "overall": "Bullish",
-    "signal": "BUY",
-    "short_term": "Bullish",
+    "overall": "Bearish",
+    "signal": "SELL",
+    "short_term": "Bearish",
     "medium_term": "Bearish",
-    "long_term": "N/A"
+    "long_term": "Bullish"
   },
   "support_resistance": {
     "resistance": 289.0,
-    "support": 270.15,
+    "support": 253.6,
     "distance_to_resistance": 2.0,
-    "distance_to_support": 16.85
+    "distance_to_support": 33.4
   },
   "historical": {
     "dates": [
+      "16-01-2026",
       "19-01-2026",
       "20-01-2026",
       "21-01-2026",
       "22-01-2026",
       "23-01-2026",
-      "26-01-2026",
       "27-01-2026",
       "28-01-2026",
       "29-01-2026",
@@ -55,103 +55,7 @@
   "intraday": [
     {
       "time": "09:15",
-      "price": 285.65
-    },
-    {
-      "time": "09:30",
-      "price": 286.5
-    },
-    {
-      "time": "09:45",
-      "price": 286.4
-    },
-    {
-      "time": "10:00",
-      "price": 286.65
-    },
-    {
-      "time": "10:15",
-      "price": 286.2
-    },
-    {
-      "time": "10:30",
-      "price": 286.0
-    },
-    {
-      "time": "10:45",
-      "price": 287.4
-    },
-    {
-      "time": "11:00",
-      "price": 287.8
-    },
-    {
-      "time": "11:15",
-      "price": 287.3
-    },
-    {
-      "time": "11:30",
-      "price": 287.15
-    },
-    {
-      "time": "11:45",
-      "price": 287.55
-    },
-    {
-      "time": "12:00",
-      "price": 286.8
-    },
-    {
-      "time": "12:15",
-      "price": 287.35
-    },
-    {
-      "time": "12:30",
-      "price": 287.1
-    },
-    {
-      "time": "12:45",
-      "price": 287.1
-    },
-    {
-      "time": "13:00",
-      "price": 286.85
-    },
-    {
-      "time": "13:15",
-      "price": 286.35
-    },
-    {
-      "time": "13:30",
-      "price": 286.55
-    },
-    {
-      "time": "13:45",
-      "price": 286.95
-    },
-    {
-      "time": "14:00",
-      "price": 287.6
-    },
-    {
-      "time": "14:15",
-      "price": 288.6
-    },
-    {
-      "time": "14:30",
-      "price": 287.95
-    },
-    {
-      "time": "14:45",
-      "price": 287.1
-    },
-    {
-      "time": "15:00",
-      "price": 287.85
-    },
-    {
-      "time": "15:15",
-      "price": 287.8
+      "price": 283.8
     },
     {
       "time": "15:30",
@@ -159,13 +63,13 @@
     }
   ],
   "shadows": {
-    "green_shadow": 1.6,
-    "red_shadow": 0.0
+    "green_shadow": 2.0,
+    "red_shadow": 41.0
   },
   "key_levels": {
-    "day_high": 288.6,
-    "day_high_time": "14:15",
-    "day_low": 285.65,
+    "day_high": 289.0,
+    "day_high_time": "15:30",
+    "day_low": 242.8,
     "day_low_time": "09:15"
   }
 }

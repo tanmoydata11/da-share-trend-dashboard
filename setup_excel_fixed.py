@@ -173,6 +173,6 @@ if __name__ == "__main__":
     if len(sys.argv) > 2:
         num_days = int(sys.argv[2])
     else:
-        num_days = 30
+        num_days = 366  # CHANGED: Full year (365 days + 1 for safety)
     
     create_excel_structure(start_date, num_days)

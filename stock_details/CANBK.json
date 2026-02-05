@@ -1,30 +1,30 @@
 {
-  "name": "HDFCBANK",
-  "current_price": 929.25,
-  "open": 921.0,
-  "high": 956.3,
-  "low": 907.85,
-  "change": 8.25,
-  "change_pct": 0.9,
+  "name": "CANBK",
+  "current_price": 147.25,
+  "open": 146.47,
+  "high": 159.91,
+  "low": 146.03,
+  "change": 0.78,
+  "change_pct": 0.53,
   "date": "02-02-2026 to 30-01-2026",
   "updated_time": "01:24 PM",
   "ema": {
-    "ema_9": 931.08,
-    "ema_20": 932.37,
-    "ema_200": 929.04
+    "ema_9": 147.57,
+    "ema_20": 148.16,
+    "ema_200": 152.72
   },
   "trend": {
     "overall": "Bearish",
     "signal": "SELL",
     "short_term": "Bearish",
     "medium_term": "Bearish",
-    "long_term": "Bullish"
+    "long_term": "Bearish"
   },
   "support_resistance": {
-    "resistance": 940.0,
-    "support": 907.85,
-    "distance_to_resistance": 10.75,
-    "distance_to_support": 21.4
+    "resistance": 159.91,
+    "support": 147.12,
+    "distance_to_resistance": 12.66,
+    "distance_to_support": 0.13
   },
   "historical": {
     "dates": [
@@ -40,36 +40,36 @@
       "30-01-2026"
     ],
     "prices": [
-      930.55,
-      925.65,
-      930.9,
-      921.0,
-      921.0,
-      915.8,
-      928.0,
-      932.7,
-      935.8,
-      929.25
+      157.2,
+      156.7,
+      153.6,
+      150.96,
+      154.92,
+      151.8,
+      154.72,
+      157.8,
+      150.7,
+      147.25
     ]
   },
   "intraday": [
     {
       "time": "09:15",
-      "price": 921.0
+      "price": 146.47
     },
     {
       "time": "15:30",
-      "price": 929.25
+      "price": 147.25
     }
   ],
   "shadows": {
-    "green_shadow": 27.05,
-    "red_shadow": 13.15
+    "green_shadow": 12.66,
+    "red_shadow": 0.44
   },
   "key_levels": {
-    "day_high": 956.3,
+    "day_high": 159.91,
     "day_high_time": "15:30",
-    "day_low": 907.85,
+    "day_low": 146.03,
     "day_low_time": "09:15"
   }
 }

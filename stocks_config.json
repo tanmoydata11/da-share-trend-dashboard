@@ -1,27 +1,132 @@
 {
   "stocks": [
-    {"symbol": "RELIANCE.NS", "sector": "Energy"},  
-    {"symbol": "INFY.NS", "sector": "IT"},
-    {"symbol": "HDFCBANK.NS", "sector": "Banking"},   
-    {"symbol": "AXISBANK.NS", "sector": "Banking"},
-    {"symbol": "SBIN.NS", "sector": "Banking"},
-    {"symbol": "KOTAKBANK.NS", "sector": "Banking"},
-    {"symbol": "BAJFINANCE.NS", "sector": "Financial Services"},
-    {"symbol": "NELCO.NS", "sector": "Electronics"},
-    {"symbol": "HINDCOPPER.NS", "sector": "Metals"},
-    {"symbol": "HINDZINC.NS", "sector": "Metals"},
-    {"symbol": "ASHOKLEY.NS", "sector": "Automobile"},
-    {"symbol": "RBLBANK.NS", "sector": "Banking"},
-    {"symbol": "APOLLOTYRE.NS", "sector": "Automobile"},
-    {"symbol": "OIL.NS", "sector": "Energy"},
-    {"symbol": "HCLTECH.NS", "sector": "IT"},
-    {"symbol": "TATASTEEL.NS", "sector": "Metals"}, 
-    {"symbol": "FEDERALBNK.NS", "sector": "Banking"},
-    {"symbol": "UNIONBANK.NS", "sector": "Banking"},
-    {"symbol": "VEDL.NS", "sector": "Energy"},
-    {"symbol": "IDEA.NS", "sector": "Telecom"},
-    {"symbol": "TATACONSUM.NS", "sector": "Consumer Goods"},
-    {"symbol": "RVNL.NS", "sector": "Infrastructure"},
-    {"symbol": "ITC.NS", "sector": "FMCG"}
+    {
+      "symbol": "RELIANCE.NS",
+      "sector": "Energy"
+    },
+    {
+      "symbol": "INFY.NS",
+      "sector": "IT"
+    },
+    {
+      "symbol": "HDFCBANK.NS",
+      "sector": "Banking"
+    },
+    {
+      "symbol": "AXISBANK.NS",
+      "sector": "Banking"
+    },
+    {
+      "symbol": "SBIN.NS",
+      "sector": "Banking"
+    },
+    {
+      "symbol": "KOTAKBANK.NS",
+      "sector": "Banking"
+    },
+    {
+      "symbol": "BAJFINANCE.NS",
+      "sector": "Financial Services"
+    },
+    {
+      "symbol": "NELCO.NS",
+      "sector": "Electronics"
+    },
+    {
+      "symbol": "HINDCOPPER.NS",
+      "sector": "Metals"
+    },
+    {
+      "symbol": "HINDZINC.NS",
+      "sector": "Metals"
+    },
+    {
+      "symbol": "ASHOKLEY.NS",
+      "sector": "Automobile"
+    },
+    {
+      "symbol": "RBLBANK.NS",
+      "sector": "Banking"
+    },
+    {
+      "symbol": "APOLLOTYRE.NS",
+      "sector": "Automobile"
+    },
+    {
+      "symbol": "OIL.NS",
+      "sector": "Energy"
+    },
+    {
+      "symbol": "HCLTECH.NS",
+      "sector": "IT"
+    },
+    {
+      "symbol": "TATASTEEL.NS",
+      "sector": "Metals"
+    },
+    {
+      "symbol": "FEDERALBNK.NS",
+      "sector": "Banking"
+    },
+    {
+      "symbol": "UNIONBANK.NS",
+      "sector": "Banking"
+    },
+    {
+      "symbol": "CANBK.NS",
+      "sector": "Banking"
+    },
+    {
+      "symbol": "YESBANK.NS",
+      "sector": "Banking"
+    },
+    {
+      "symbol": "BANDHANBNK.NS",
+      "sector": "Banking"
+    },
+    {
+      "symbol": "INDUSINDBK.NS",
+      "sector": "Banking"
+    },
+    {
+      "symbol": "PNB.NS",
+      "sector": "Banking"
+    },
+    {
+      "symbol": "VEDL.NS",
+      "sector": "Energy"
+    },
+    {
+      "symbol": "IDEA.NS",
+      "sector": "Telecom"
+    },
+    {
+      "symbol": "TATACONSUM.NS",
+      "sector": "Consumer Goods"
+    },
+    {
+      "symbol": "TCS.NS",
+      "sector": "IT"
+    },
+    {
+      "symbol": "HCLTECH.NS",
+      "sector": "IT"
+    },
+    {
+      "symbol": "WIPRO.NS",
+      "sector": "IT"
+    },
+    {
+      "symbol": "RVNL.NS",
+      "sector": "Infrastructure"
+    },
+    {
+      "symbol": "ITC.NS",
+      "sector": "FMCG"
+    },
+    {
+      "symbol": "IDFCFIRSTB.NS",
+      "sector": "Banking"
+    }
   ]
 }

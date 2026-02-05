@@ -1,24 +1,24 @@
 {
   "name": "KOTAKBANK",
   "current_price": 408.0,
-  "open": 409.2,
-  "high": 410.0,
-  "low": 406.0,
-  "change": -1.2,
-  "change_pct": -0.29,
-  "date": "30-01-2026",
-  "updated_time": "11:11 AM",
+  "open": 408.2,
+  "high": 2146.1,
+  "low": 403.2,
+  "change": -0.2,
+  "change_pct": -0.05,
+  "date": "02-02-2026 to 30-01-2026",
+  "updated_time": "01:24 PM",
   "ema": {
-    "ema_9": 533.97,
-    "ema_20": null,
-    "ema_200": null
+    "ema_9": 408.24,
+    "ema_20": 408.36,
+    "ema_200": 463.05
   },
   "trend": {
     "overall": "Bearish",
     "signal": "SELL",
     "short_term": "Bearish",
     "medium_term": "Bearish",
-    "long_term": "N/A"
+    "long_term": "Bearish"
   },
   "support_resistance": {
     "resistance": 430.4,
@@ -28,12 +28,12 @@
   },
   "historical": {
     "dates": [
+      "16-01-2026",
       "19-01-2026",
       "20-01-2026",
       "21-01-2026",
       "22-01-2026",
       "23-01-2026",
-      "26-01-2026",
       "27-01-2026",
       "28-01-2026",
       "29-01-2026",
@@ -55,103 +55,7 @@
   "intraday": [
     {
       "time": "09:15",
-      "price": 409.2
-    },
-    {
-      "time": "09:30",
-      "price": 408.0
-    },
-    {
-      "time": "09:45",
-      "price": 408.1
-    },
-    {
-      "time": "10:00",
-      "price": 407.7
-    },
-    {
-      "time": "10:15",
-      "price": 408.8
-    },
-    {
-      "time": "10:30",
-      "price": 408.9
-    },
-    {
-      "time": "10:45",
-      "price": 408.5
-    },
-    {
-      "time": "11:00",
-      "price": 407.8
-    },
-    {
-      "time": "11:15",
-      "price": 406.4
-    },
-    {
-      "time": "11:30",
-      "price": 406.4
-    },
-    {
-      "time": "11:45",
-      "price": 406.2
-    },
-    {
-      "time": "12:00",
-      "price": 406.3
-    },
-    {
-      "time": "12:15",
-      "price": 408.0
-    },
-    {
-      "time": "12:30",
-      "price": 408.3
-    },
-    {
-      "time": "12:45",
-      "price": 408.5
-    },
-    {
-      "time": "13:00",
-      "price": 407.2
-    },
-    {
-      "time": "13:15",
-      "price": 406.0
-    },
-    {
-      "time": "13:30",
-      "price": 406.3
-    },
-    {
-      "time": "13:45",
-      "price": 408.7
-    },
-    {
-      "time": "14:00",
-      "price": 409.5
-    },
-    {
-      "time": "14:15",
-      "price": 409.1
-    },
-    {
-      "time": "14:30",
-      "price": 409.0
-    },
-    {
-      "time": "14:45",
-      "price": 410.0
-    },
-    {
-      "time": "15:00",
-      "price": 407.7
-    },
-    {
-      "time": "15:15",
-      "price": 407.7
+      "price": 408.2
     },
     {
       "time": "15:30",
@@ -159,13 +63,13 @@
     }
   ],
   "shadows": {
-    "green_shadow": 2.0,
-    "red_shadow": 3.2
+    "green_shadow": 1738.1,
+    "red_shadow": 5.0
   },
   "key_levels": {
-    "day_high": 410.0,
-    "day_high_time": "14:45",
-    "day_low": 406.0,
-    "day_low_time": "13:15"
+    "day_high": 2146.1,
+    "day_high_time": "15:30",
+    "day_low": 403.2,
+    "day_low_time": "09:15"
   }
 }

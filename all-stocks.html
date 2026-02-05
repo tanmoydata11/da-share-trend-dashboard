@@ -386,29 +386,32 @@
         document.getElementById('all-stocks').style.display = 'block';
 
         // Update header
-        document.getElementById('current-date').textContent = data.date;
-        document.getElementById('update-time').textContent = data.updated_time;
+        const displayDate = data.date || data.date_range || 'N/A';
+        document.getElementById('current-date').textContent = displayDate;
+        document.getElementById('update-time').textContent = data.updated_time || data.generated_time || 'N/A';
 
         // Update stats
-        document.getElementById('gainers-count').textContent = data.stats.gainers_count;
-        document.getElementById('losers-count').textContent = data.stats.losers_count;
-        document.getElementById('avg-volatility').textContent = data.stats.avg_volatility + '%';
-        document.getElementById('total-stocks').textContent = data.stats.total_stocks;
+        const stats = data.stats || {};
+        document.getElementById('gainers-count').textContent = stats.gainers_count || 0;
+        document.getElementById('losers-count').textContent = stats.losers_count || 0;
+        document.getElementById('avg-volatility').textContent = (stats.avg_volatility || 0) + '%';
+        document.getElementById('total-stocks').textContent = stats.total_stocks || 0;
 
         // Render all stocks
         const stocksGrid = document.getElementById('stocks-grid');
-        stocksGrid.innerHTML = data.all_stocks.map(stock => {
+        const allStocks = data.all_stocks || [];
+        
+        stocksGrid.innerHTML = allStocks.map(stock => {
           const cardClass = stock.change_pct > 0 ? 'gainer' : stock.change_pct < 0 ? 'loser' : '';
           const changeClass = stock.change_pct >= 0 ? 'positive' : 'negative';
           const changeSymbol = stock.change_pct >= 0 ? '▲' : '▼';
           const changeSign = stock.change_pct >= 0 ? '+' : '';
 
-          // Calculate position of current price in range (0-100%)
           const range = stock.high - stock.low;
           const position = range > 0 ? ((stock.close - stock.low) / range) * 100 : 50;
 
           return `
-            <a href="stock-detail.html?stock=${stock.name}" class="stock-card ${cardClass}">
+            <a href="stock-detail.html?stock=${stock.name}" style="text-decoration: none; color: inherit;" class="stock-card ${cardClass}">
               <div class="stock-header">
                 <span class="stock-name">${stock.name}</span>
                 <span class="stock-change ${changeClass}">${changeSign}₹${Math.abs(stock.change)} / ${changeSign}${stock.change_pct}% ${changeSymbol}</span>
@@ -416,33 +419,31 @@
 
               <div class="price-info">
                 <div class="price-box">
-                  <div class="price-label">Open</div>
-                  <div class="price-value">₹${stock.open}</div>
+                  <div class="price-label">Year Open</div>
+                  <div class="price-value">₹${parseFloat(stock.open).toFixed(2)}</div>
                 </div>
                 <div class="price-box">
-                  <div class="price-label">Close</div>
-                  <div class="price-value">₹${stock.close}</div>
+                  <div class="price-label">Year Close</div>
+                  <div class="price-value">₹${parseFloat(stock.close).toFixed(2)}</div>
                 </div>
                 <div class="price-box" style="background: #d5f4e6;">
                   <div class="price-label" style="color: #27ae60;">🟢 Green Shadow</div>
-                  <div class="price-value" style="color: #27ae60;">₹${stock.green_shadow}</div>
+                  <div class="price-value" style="color: #27ae60;">₹${parseFloat(stock.green_shadow).toFixed(2)}</div>
                 </div>
                 <div class="price-box" style="background: #fadbd8;">
                   <div class="price-label" style="color: #e74c3c;">🔴 Red Shadow</div>
-                  <div class="price-value" style="color: #e74c3c;">₹${stock.red_shadow}</div>
+                  <div class="price-value" style="color: #e74c3c;">₹${parseFloat(stock.red_shadow).toFixed(2)}</div>
                 </div>
               </div>
 
               <div class="highlow-details">
                 <div class="detail-box high">
-                  <div class="detail-label">📈 Day High</div>
-                  <div class="detail-price high-price">₹${stock.high}</div>
-                  <div class="detail-time">🕐 at ${stock.high_time}</div>
+                  <div class="detail-label">📈 Year High</div>
+                  <div class="detail-price high-price">₹${parseFloat(stock.high).toFixed(2)}</div>
                 </div>
                 <div class="detail-box low">
-                  <div class="detail-label">📉 Day Low</div>
-                  <div class="detail-price low-price">₹${stock.low}</div>
-                  <div class="detail-time">🕐 at ${stock.low_time}</div>
+                  <div class="detail-label">📉 Year Low</div>
+                  <div class="detail-price low-price">₹${parseFloat(stock.low).toFixed(2)}</div>
                 </div>
               </div>
 
@@ -452,8 +453,8 @@
                   <div class="current-marker" style="left: ${position}%;"></div>
                 </div>
                 <div class="range-values">
-                  <span>Low: ₹${stock.low}</span>
-                  <span>High: ₹${stock.high}</span>
+                  <span>Low: ₹${parseFloat(stock.low).toFixed(2)}</span>
+                  <span>High: ₹${parseFloat(stock.high).toFixed(2)}</span>
                 </div>
               </div>
               
@@ -466,8 +467,9 @@
 
       } catch (error) {
         document.getElementById('loading').innerHTML =
-          `<p style="color: #e74c3c;">Error loading data: ${error.message}</p>
-           <p>Please make sure dashboard_data.json is in the same folder.</p>`;
+          `<p style="color: #e74c3c;">❌ Error loading data: ${error.message}</p>
+           <p>Please run: python analyze_stocks_enhanced.py</p>`;
+        console.error('Error:', error);
       }
     }
 

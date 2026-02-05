@@ -1,24 +1,24 @@
 {
   "name": "HINDCOPPER",
   "current_price": 675.1,
-  "open": 706.9,
-  "high": 711.3,
-  "low": 674.75,
-  "change": -31.8,
-  "change_pct": -4.5,
-  "date": "30-01-2026",
-  "updated_time": "11:11 AM",
+  "open": 631.95,
+  "high": 760.05,
+  "low": 517.75,
+  "change": 43.15,
+  "change_pct": 6.83,
+  "date": "02-02-2026 to 30-01-2026",
+  "updated_time": "01:24 PM",
   "ema": {
-    "ema_9": 618.61,
-    "ema_20": null,
-    "ema_200": null
+    "ema_9": 685.05,
+    "ema_20": 694.15,
+    "ema_200": 626.99
   },
   "trend": {
-    "overall": "Bullish",
-    "signal": "BUY",
-    "short_term": "Bullish",
+    "overall": "Bearish",
+    "signal": "SELL",
+    "short_term": "Bearish",
     "medium_term": "Bearish",
-    "long_term": "N/A"
+    "long_term": "Bullish"
   },
   "support_resistance": {
     "resistance": 760.05,
@@ -28,12 +28,12 @@
   },
   "historical": {
     "dates": [
+      "16-01-2026",
       "19-01-2026",
       "20-01-2026",
       "21-01-2026",
       "22-01-2026",
       "23-01-2026",
-      "26-01-2026",
       "27-01-2026",
       "28-01-2026",
       "29-01-2026",
@@ -55,103 +55,7 @@
   "intraday": [
     {
       "time": "09:15",
-      "price": 706.9
-    },
-    {
-      "time": "09:30",
-      "price": 705.3
-    },
-    {
-      "time": "09:45",
-      "price": 711.3
-    },
-    {
-      "time": "10:00",
-      "price": 707.95
-    },
-    {
-      "time": "10:15",
-      "price": 708.8
-    },
-    {
-      "time": "10:30",
-      "price": 701.6
-    },
-    {
-      "time": "10:45",
-      "price": 711.0
-    },
-    {
-      "time": "11:00",
-      "price": 710.45
-    },
-    {
-      "time": "11:15",
-      "price": 709.0
-    },
-    {
-      "time": "11:30",
-      "price": 706.8
-    },
-    {
-      "time": "11:45",
-      "price": 706.5
-    },
-    {
-      "time": "12:00",
-      "price": 698.0
-    },
-    {
-      "time": "12:15",
-      "price": 691.6
-    },
-    {
-      "time": "12:30",
-      "price": 695.2
-    },
-    {
-      "time": "12:45",
-      "price": 694.8
-    },
-    {
-      "time": "13:00",
-      "price": 686.5
-    },
-    {
-      "time": "13:15",
-      "price": 686.35
-    },
-    {
-      "time": "13:30",
-      "price": 695.3
-    },
-    {
-      "time": "13:45",
-      "price": 702.5
-    },
-    {
-      "time": "14:00",
-      "price": 693.0
-    },
-    {
-      "time": "14:15",
-      "price": 690.7
-    },
-    {
-      "time": "14:30",
-      "price": 682.65
-    },
-    {
-      "time": "14:45",
-      "price": 674.75
-    },
-    {
-      "time": "15:00",
-      "price": 692.8
-    },
-    {
-      "time": "15:15",
-      "price": 678.05
+      "price": 631.95
     },
     {
       "time": "15:30",
@@ -159,13 +63,13 @@
     }
   ],
   "shadows": {
-    "green_shadow": 36.2,
-    "red_shadow": 32.15
+    "green_shadow": 84.95,
+    "red_shadow": 114.2
   },
   "key_levels": {
-    "day_high": 711.3,
-    "day_high_time": "09:45",
-    "day_low": 674.75,
-    "day_low_time": "14:45"
+    "day_high": 760.05,
+    "day_high_time": "15:30",
+    "day_low": 517.75,
+    "day_low_time": "09:15"
   }
 }

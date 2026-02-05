@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stock Dashboard - Dynamic View</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
   <style>
-    /* Same CSS as before */
     * {
       margin: 0;
       padding: 0;
@@ -79,32 +79,115 @@
     .portfolio-value {
       text-align: center;
       padding: 20px;
-      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       border-radius: 10px;
       color: white;
       margin-bottom: 30px;
     }
 
-    .value-label {
-      font-size: 16px;
-      opacity: 0.9;
+    .sectors-section {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      border-radius: 10px;
+      padding: 25px;
+      color: white;
+      margin-bottom: 30px;
     }
 
-    .value-amount {
-      font-size: 42px;
+    .sectors-title {
+      font-size: 24px;
       font-weight: bold;
-      margin: 10px 0;
+      margin-bottom: 20px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .value-change {
+    .sector-details-btn {
+      display: inline-block;
+      padding: 10px 25px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #764ba2;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s;
+    }
+
+    .sector-details-btn:hover {
+      background: white;
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .sectors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
+
+    .sector-card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    .sector-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .sector-name {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .sector-change {
       font-size: 20px;
+      font-weight: bold;
+      padding: 5px 12px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .sector-details {
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    .sector-stock {
+      margin-top: 5px;
+      padding: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+
+    .main-content {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .left-section {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
-      margin-bottom: 30px;
     }
 
     .card {
@@ -206,12 +289,6 @@
       color: #e74c3c;
     }
 
-    .detail-time {
-      font-size: 11px;
-      color: #7f8c8d;
-      margin-top: 2px;
-    }
-
     .positive {
       color: #27ae60;
       background: #d5f4e6;
@@ -248,13 +325,16 @@
       background: #fff3cd;
       border-left: 4px solid #ffc107;
       padding: 20px;
-      border-radius: 5px;
-      margin-top: 20px;
+      border-radius: 10px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
     }
 
     .advice-box h3 {
       color: #856404;
       margin-bottom: 15px;
+      font-size: 20px;
     }
 
     .advice-list {
@@ -286,11 +366,19 @@
         font-size: 24px;
       }
 
-      .value-amount {
-        font-size: 32px;
+      .stock-details {
+        grid-template-columns: 1fr;
       }
 
-      .stock-details {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+
+      .advice-box {
+        position: static;
+      }
+
+      .sectors-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -322,37 +410,52 @@
 
       <!-- PORTFOLIO VALUE -->
       <div class="portfolio-value">
-        <div class="value-label">💰 Total Portfolio Value</div>
-        <div class="value-amount" id="portfolio-value"></div>
-        <div class="value-change">
-          Today's Change: <strong id="portfolio-change"></strong>
+        <div style="font-size: 16px; opacity: 0.9;">💰 Total Portfolio Value</div>
+        <div style="font-size: 42px; font-weight: bold; margin: 10px 0;" id="portfolio-value"></div>
+        <div style="font-size: 20px;">
+          Year Change: <strong id="portfolio-change"></strong>
         </div>
       </div>
 
-      <!-- GRID OF CARDS -->
-      <div class="grid">
-        <!-- TOP GAINERS CARD -->
-        <div class="card">
-          <div class="card-title">🏆 Today's Winners</div>
-          <ul class="stock-list" id="gainers-list"></ul>
+      <!-- SECTOR ANALYSIS -->
+      <div class="sectors-section">
+        <div class="sectors-title">
+          📊 Sector Performance Analysis
+          <a href="sector-details.html" class="sector-details-btn">View Detailed Analysis →</a>
         </div>
-
-        <!-- TOP LOSERS CARD -->
-        <div class="card">
-          <div class="card-title">⚠️ Today's Losers</div>
-          <ul class="stock-list" id="losers-list"></ul>
-        </div>
+        <div class="sectors-grid" id="sectors-grid"></div>
       </div>
 
-      <!-- VIEW ALL STOCKS BUTTON -->
-      <div class="view-all-btn">
-        <a href="all-stocks.html">📊 View All Stocks With High/Low Data →</a>
-      </div>
+      <!-- MAIN CONTENT WITH SIDEBAR -->
+      <div class="main-content">
+        <!-- LEFT SECTION -->
+        <div class="left-section">
+          <!-- VIEW ALL STOCKS BUTTON -->
+          <div class="view-all-btn">
+            <a href="all-stocks.html">📊 View All Stocks With High/Low Data →</a>
+          </div>
 
-      <!-- ADVICE BOX -->
-      <div class="advice-box">
-        <h3>💡 Simple Advice for Today</h3>
-        <ul class="advice-list" id="insights-list"></ul>
+          <!-- GRID OF CARDS -->
+          <div class="grid">
+            <!-- TOP GAINERS CARD -->
+            <div class="card">
+              <div class="card-title">🏆 Today's Winners</div>
+              <ul class="stock-list" id="gainers-list"></ul>
+            </div>
+
+            <!-- TOP LOSERS CARD -->
+            <div class="card">
+              <div class="card-title">⚠️ Today's Losers</div>
+              <ul class="stock-list" id="losers-list"></ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDEBAR - ADVICE BOX -->
+        <div class="advice-box">
+          <h3>💡 Simple Advice for Today</h3>
+          <ul class="advice-list" id="insights-list"></ul>
+        </div>
       </div>
 
     </div>
@@ -370,27 +473,59 @@
         document.getElementById('dashboard').style.display = 'block';
 
         // Update header
-        document.getElementById('current-date').textContent = data.date;
-        document.getElementById('update-time').textContent = data.updated_time;
+        const displayDate = data.date || data.date_range || 'N/A';
+        document.getElementById('current-date').textContent = displayDate;
+        document.getElementById('update-time').textContent = data.updated_time || data.generated_time || 'N/A';
 
         // Update market mood
         const moodDiv = document.getElementById('market-mood');
-        moodDiv.className = 'market-mood ' + data.mood;
-        document.getElementById('mood-emoji').textContent = data.mood_emoji;
-        document.getElementById('mood-text').textContent = 'Market is ' + data.mood;
+        const moodValue = data.mood || data.market_mood || 'neutral';
+        moodDiv.className = 'market-mood ' + moodValue;
+        document.getElementById('mood-emoji').textContent = data.mood_emoji || '😐';
+        document.getElementById('mood-text').textContent = 'Market is ' + moodValue;
         document.getElementById('overall-change').textContent =
-          (data.portfolio.change_pct >= 0 ? '+' : '') + data.portfolio.change_pct + '%';
+          (data.overall_change >= 0 ? '+' : '') + data.overall_change + '%';
 
         // Update portfolio
         document.getElementById('portfolio-value').textContent =
           '₹' + data.portfolio.total.toLocaleString('en-IN');
         document.getElementById('portfolio-change').textContent =
-          (data.portfolio.change >= 0 ? '+' : '') + '₹' + data.portfolio.change.toLocaleString('en-IN') +
+          (data.portfolio.change >= 0 ? '+' : '') + '₹' + Math.abs(data.portfolio.change).toLocaleString('en-IN') +
           ' (' + (data.portfolio.change_pct >= 0 ? '+' : '') + data.portfolio.change_pct + '%)';
+
+        // Render sectors
+        const sectorsGrid = document.getElementById('sectors-grid');
+        const sectors = data.sectors || [];
+        sectorsGrid.innerHTML = sectors.map(sector => {
+          const changeClass = sector.avg_change >= 0 ? 'positive' : 'negative';
+          const changeSymbol = sector.avg_change >= 0 ? '▲' : '▼';
+          return `
+            <div class="sector-card">
+              <div class="sector-header">
+                <span class="sector-name">${sector.name}</span>
+                <span class="sector-change ${changeClass}">${sector.avg_change >= 0 ? '+' : ''}${sector.avg_change}% ${changeSymbol}</span>
+              </div>
+              <div class="sector-details">
+                <div style="margin-bottom: 5px;">📈 Stocks: ${sector.stocks_count}</div>
+                ${sector.best_stock ? `
+                  <div class="sector-stock">
+                    <strong>Best:</strong> ${sector.best_stock.name} (${sector.best_stock.change_pct >= 0 ? '+' : ''}${sector.best_stock.change_pct}%)
+                  </div>
+                ` : ''}
+                ${sector.worst_stock ? `
+                  <div class="sector-stock">
+                    <strong>Worst:</strong> ${sector.worst_stock.name} (${sector.worst_stock.change_pct >= 0 ? '+' : ''}${sector.worst_stock.change_pct}%)
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+          `;
+        }).join('');
 
         // Render gainers
         const gainersList = document.getElementById('gainers-list');
-        gainersList.innerHTML = data.top_gainers.map(stock => `
+        const topGainers = data.top_gainers || [];
+        gainersList.innerHTML = topGainers.map(stock => `
           <li class="stock-item">
             <div class="stock-header">
               <span class="stock-name">${stock.name}</span>
@@ -398,14 +533,12 @@
             </div>
             <div class="stock-details">
               <div class="detail-box high">
-                <div class="detail-label">📈 Day High</div>
+                <div class="detail-label">📈 Year High</div>
                 <div class="detail-price high-price">₹${stock.high}</div>
-                <div class="detail-time">at ${stock.high_time}</div>
               </div>
               <div class="detail-box low">
-                <div class="detail-label">📉 Day Low</div>
+                <div class="detail-label">📉 Year Low</div>
                 <div class="detail-price low-price">₹${stock.low}</div>
-                <div class="detail-time">at ${stock.low_time}</div>
               </div>
             </div>
           </li>
@@ -413,22 +546,21 @@
 
         // Render losers
         const losersList = document.getElementById('losers-list');
-        losersList.innerHTML = data.top_losers.map(stock => `
+        const topLosers = data.top_losers || [];
+        losersList.innerHTML = topLosers.map(stock => `
           <li class="stock-item">
             <div class="stock-header">
               <span class="stock-name">${stock.name}</span>
-              <span class="stock-change negative">₹${stock.change} / ${stock.change_pct}% ▼</span>
+              <span class="stock-change negative">-₹${Math.abs(stock.change)} / ${stock.change_pct}% ▼</span>
             </div>
             <div class="stock-details">
               <div class="detail-box high">
-                <div class="detail-label">📈 Day High</div>
+                <div class="detail-label">📈 Year High</div>
                 <div class="detail-price high-price">₹${stock.high}</div>
-                <div class="detail-time">at ${stock.high_time}</div>
               </div>
               <div class="detail-box low">
-                <div class="detail-label">📉 Day Low</div>
+                <div class="detail-label">📉 Year Low</div>
                 <div class="detail-price low-price">₹${stock.low}</div>
-                <div class="detail-time">at ${stock.low_time}</div>
               </div>
             </div>
           </li>
@@ -436,14 +568,16 @@
 
         // Render insights
         const insightsList = document.getElementById('insights-list');
-        insightsList.innerHTML = data.insights.map(insight =>
-          `<li>${insight}</li>`
-        ).join('');
+        const insights = data.insights || [];
+        insightsList.innerHTML = insights.map(insight => `
+          <li>${insight}</li>
+        `).join('');
 
       } catch (error) {
         document.getElementById('loading').innerHTML =
-          `<p style="color: #e74c3c;">Error loading data: ${error.message}</p>
-           <p>Please make sure dashboard_data.json is in the same folder.</p>`;
+          `<p style="color: #e74c3c;">❌ Error loading data: ${error.message}</p>
+           <p>Please run: python analyze_stocks_enhanced.py</p>`;
+        console.error('Error:', error);
       }
     }
 

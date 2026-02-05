@@ -1,24 +1,24 @@
 {
   "name": "TATACONSUM",
   "current_price": 1132.0,
-  "open": 1110.5,
-  "high": 1136.0,
-  "low": 1110.5,
-  "change": 21.5,
-  "change_pct": 1.94,
-  "date": "30-01-2026",
-  "updated_time": "11:11 AM",
+  "open": 1092.6,
+  "high": 1218.2,
+  "low": 1092.6,
+  "change": 39.4,
+  "change_pct": 3.61,
+  "date": "02-02-2026 to 30-01-2026",
+  "updated_time": "01:24 PM",
   "ema": {
-    "ema_9": 1151.05,
-    "ema_20": null,
-    "ema_200": null
+    "ema_9": 1133.16,
+    "ema_20": 1130.48,
+    "ema_200": 1146.63
   },
   "trend": {
     "overall": "Bearish",
     "signal": "SELL",
     "short_term": "Bearish",
-    "medium_term": "Bearish",
-    "long_term": "N/A"
+    "medium_term": "Bullish",
+    "long_term": "Bearish"
   },
   "support_resistance": {
     "resistance": 1201.2,
@@ -28,12 +28,12 @@
   },
   "historical": {
     "dates": [
+      "16-01-2026",
       "19-01-2026",
       "20-01-2026",
       "21-01-2026",
       "22-01-2026",
       "23-01-2026",
-      "26-01-2026",
       "27-01-2026",
       "28-01-2026",
       "29-01-2026",
@@ -55,103 +55,7 @@
   "intraday": [
     {
       "time": "09:15",
-      "price": 1110.5
-    },
-    {
-      "time": "09:30",
-      "price": 1122.5
-    },
-    {
-      "time": "09:45",
-      "price": 1119.7
-    },
-    {
-      "time": "10:00",
-      "price": 1122.5
-    },
-    {
-      "time": "10:15",
-      "price": 1126.5
-    },
-    {
-      "time": "10:30",
-      "price": 1123.8
-    },
-    {
-      "time": "10:45",
-      "price": 1127.9
-    },
-    {
-      "time": "11:00",
-      "price": 1129.8
-    },
-    {
-      "time": "11:15",
-      "price": 1131.3
-    },
-    {
-      "time": "11:30",
-      "price": 1132.3
-    },
-    {
-      "time": "11:45",
-      "price": 1128.9
-    },
-    {
-      "time": "12:00",
-      "price": 1129.2
-    },
-    {
-      "time": "12:15",
-      "price": 1133.4
-    },
-    {
-      "time": "12:30",
-      "price": 1135.4
-    },
-    {
-      "time": "12:45",
-      "price": 1133.2
-    },
-    {
-      "time": "13:00",
-      "price": 1129.5
-    },
-    {
-      "time": "13:15",
-      "price": 1127.4
-    },
-    {
-      "time": "13:30",
-      "price": 1132.3
-    },
-    {
-      "time": "13:45",
-      "price": 1131.3
-    },
-    {
-      "time": "14:00",
-      "price": 1136.0
-    },
-    {
-      "time": "14:15",
-      "price": 1134.9
-    },
-    {
-      "time": "14:30",
-      "price": 1134.8
-    },
-    {
-      "time": "14:45",
-      "price": 1135.8
-    },
-    {
-      "time": "15:00",
-      "price": 1133.5
-    },
-    {
-      "time": "15:15",
-      "price": 1133.8
+      "price": 1092.6
     },
     {
       "time": "15:30",
@@ -159,13 +63,13 @@
     }
   ],
   "shadows": {
-    "green_shadow": 4.0,
+    "green_shadow": 86.2,
     "red_shadow": 0.0
   },
   "key_levels": {
-    "day_high": 1136.0,
-    "day_high_time": "14:00",
-    "day_low": 1110.5,
+    "day_high": 1218.2,
+    "day_high_time": "15:30",
+    "day_low": 1092.6,
     "day_low_time": "09:15"
   }
 }
